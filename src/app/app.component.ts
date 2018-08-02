@@ -3,7 +3,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+// import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { Tab3Root } from '../pages';
 
 import { FirstRunPage } from '../pages';
@@ -48,7 +48,9 @@ export class MyApp {
     { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen, private nativePageTransitions: NativePageTransitions) {
+  // constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen, private nativePageTransitions: NativePageTransitions)
+
+  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -84,35 +86,35 @@ export class MyApp {
     });
   }
 
-  ionViewWillLeave() {
+  // ionViewWillLeave() {
 
-    let options: NativeTransitionOptions = {
-       direction: 'down',
-       duration: 500,
-       slowdownfactor: 3,
-       slidePixels: 20,
-       iosdelay: 100,
-       androiddelay: 150,
-       fixedPixelsTop: 0,
-       fixedPixelsBottom: 60
-      };
+  //   let options: NativeTransitionOptions = {
+  //      direction: 'down',
+  //      duration: 500,
+  //      slowdownfactor: 3,
+  //      slidePixels: 20,
+  //      iosdelay: 100,
+  //      androiddelay: 150,
+  //      fixedPixelsTop: 0,
+  //      fixedPixelsBottom: 60
+  //     };
 
-      // openPage(page: any) {
+  // openPage(page: any) {
 
-      //   this.nativePageTransitions.slide(options);
-      //   this.navCtrl.push(page);
-      
-      // }
-    // this.nativePageTransitions.slide(options)
-    //   .then(onSuccess)
-    //   .catch(onError);
-   
-   }
+  //   this.nativePageTransitions.slide(options);
+  //   this.navCtrl.push(page);
 
-
-  // openPage(page) {
-  //   // Reset the content nav to have just this page
-  //   // we wouldn't want the back button to show in this scenario
-  //   this.nav.setRoot(page.component);
   // }
+  // this.nativePageTransitions.slide(options)
+  //   .then(onSuccess)
+  //   .catch(onError);
+
+  // }
+
+
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.setRoot(page.component);
+  }
 }
