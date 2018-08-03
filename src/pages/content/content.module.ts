@@ -1,8 +1,10 @@
+//@ts-check
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
-
 import { ContentPage } from './content';
+import * as $ from "jquery";
+
 
 // profile pic
 $(document).ready(function() {
@@ -10,7 +12,9 @@ $(document).ready(function() {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
-      reader.onload = function(e) {
+      reader.onload = function(e: any) {
+        let target: any = e.target; //<-- This (any) will tell compiler to shut up!
+        let content: string = target.result;
         $(".profile-pic").attr("src", e.target.result);
       };
 
@@ -72,7 +76,7 @@ $(".pain-scale__level").click(function() {
   ],
   imports: [
     IonicPageModule.forChild(ContentPage),
-    TranslateModule.forChild()
+    TranslateModule.forChild(), 
   ],
   exports: [
     ContentPage
