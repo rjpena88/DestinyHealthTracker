@@ -7,7 +7,7 @@ import * as $ from "jquery";
 
 
 // profile pic
-$(document).ready(function() {
+jQuery(document).ready(function() {
   var readURL = function(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
