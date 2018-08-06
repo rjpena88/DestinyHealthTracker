@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CalendarPage } from './calendar';
+// import { CalendarPage } from './calendar';
 
 @NgModule({
   declarations: [
@@ -9,6 +9,7 @@ import { CalendarPage } from './calendar';
   ],
   imports: [
     IonicPageModule.forChild(CalendarPage),
+    TranslateModule.forChild()
   ],
   exports: [
     CalendarPage

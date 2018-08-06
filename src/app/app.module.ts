@@ -59,7 +59,7 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    CalendarPage
+    // CalendarPage
   ],
   providers: [
     Api,
