@@ -1,7 +1,19 @@
+//@ts-check
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import * as $ from "jquery";
 
+
+@IonicPage()
+@Component({
+  selector: 'page-content',
+  templateUrl: 'content.html'
+})
+export class ContentPage {
+  constructor(public navCtrl: NavController) { }
+  
+
+}
 
 // profile pic
 $(document).ready(function () {
@@ -66,14 +78,3 @@ $(".pain-scale__level").click(function () {
       }
     );
 });
-
-@IonicPage()
-@Component({
-  selector: 'page-content',
-  templateUrl: 'content.html'
-})
-export class ContentPage {
-
-  constructor(public navCtrl: NavController) { }
-
-}

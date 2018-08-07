@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, NavParams, AlertController } from 'ionic-angular';
 import * as moment from 'moment';
+// import { NgCalendarModule } from 'ionic2-calendar';
 
+// @IonicPage()
 @Component({
   selector: 'page-calendar',
   templateUrl: 'calendar.html',
@@ -59,7 +61,5 @@ export class CalendarPage {
     this.selectedDay = ev.selectedTime;
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarPage');
-  }
-
+    console.log('ionViewDidLoad CalendarPage');}
 }

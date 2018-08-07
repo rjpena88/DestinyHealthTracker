@@ -9,6 +9,7 @@ import { CalendarPage } from './calendar';
   ],
   imports: [
     IonicPageModule.forChild(CalendarPage),
+    TranslateModule,
   ],
   exports: [
     CalendarPage
