@@ -4,13 +4,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 // import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
-import { Tab3Root } from '../pages';
+// import { Tab3Root } from '../pages';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
 
 @Component({
-  template: `<ion-menu [content]="content">
+  template: 
+  `
+  <ion-menu [content]="content">
+
     <ion-header>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
@@ -26,7 +29,9 @@ import { Settings } from '../providers';
     </ion-content>
 
   </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+
+  <ion-nav #content [root]="rootPage"></ion-nav>
+  `
 })
 export class MyApp {
   rootPage = FirstRunPage;
