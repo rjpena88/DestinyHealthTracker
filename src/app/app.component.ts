@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 // import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
-// import { Tab3Root } from '../pages';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
@@ -35,7 +34,6 @@ import { Settings } from '../providers';
 })
 export class MyApp {
   rootPage = FirstRunPage;
-  // rootPage = Tab3Root;
 
   @ViewChild(Nav) nav: Nav;
 
