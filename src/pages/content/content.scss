@@ -1,5 +1,17 @@
-/* profile pic  */
+// expandable
 
+accordion {
+
+    .card-header{
+        background-color: map-get($colors, primary);
+        color: #fff;
+    }
+    .card-content {
+        padding: 0px 16px; 
+        max-height: 0px;
+    }
+}
+/* profile pic  */
 .profile-pic {
     max-width: 200px;
     max-height: 200px;
@@ -16,8 +28,8 @@
     width: 128px;
     height: 128px;
     border: 8px solid rgba(255, 255, 255, 0.7);
-    position: absolute;
-    top: 72px;
+    // position: absolute;
+    // top: 72px;
     background-color: orange;
   }
   
@@ -28,9 +40,9 @@
   
   .p-image {
     position: absolute;
-    top: 167px;
-    right: 30px;
-    color: #666666;
+    top: 115px;
+    left: 100px;
+    color: #ffffff;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     &:hover {
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -38,7 +50,7 @@
   }
   
   .upload-button {
-    font-size: 1.2em;
+    font-size: 1.5em;
     &:hover {
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       color: #999;
@@ -47,10 +59,9 @@
   
   /* How Are You Feeling  */
   @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
-  
   /* Begin reset */
-  
-  body, ul {
+  body,
+  ul {
     margin: 0;
     padding: 0;
   }
@@ -59,17 +70,19 @@
     list-style: none;
   }
   
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     margin: 0;
   }
   
   /* End reset */
-  
-  * {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
-    &:before, &:after {
-      box-sizing: border-box;
-    }
   }
   
   body {
@@ -87,7 +100,7 @@
     margin-bottom: 32px;
   }
   
-  .wrapper {
+  .barbar {
     margin: 50px auto 0 auto;
     padding: 120px 20px 130px 20px;
     max-width: 779px;
@@ -96,7 +109,6 @@
     border-radius: 5px;
     text-align: center;
   }
-  
   @media (min-width: 768px) {
     .wrapper {
       padding: 120px 30px 130px 30px;
@@ -107,26 +119,25 @@
     position: relative;
     max-width: 450px;
     margin: 0 auto;
-    &:before {
-      position: absolute;
-      content: "";
-      width: 1px;
-      height: 32px;
-      top: 45px;
-      left: 0;
-      background-color: #dbe1e6;
-    }
-    &:after {
-      position: absolute;
-      content: "";
-      width: 1px;
-      height: 32px;
-      top: 45px;
-      right: 0;
-      background-color: #dbe1e6;
-    }
   }
-  
+  .pain-scale:before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 32px;
+    top: 45px;
+    left: 0;
+    background-color: #dbe1e6;
+  }
+  .pain-scale:after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 32px;
+    top: 45px;
+    right: 0;
+    background-color: #dbe1e6;
+  }
   .pain-scale__level {
     display: inline-block;
     position: relative;
@@ -137,63 +148,48 @@
     cursor: pointer;
     z-index: 1;
   }
-  
   .pain-scale__level--1, .pain-scale__level--selected.pain-scale__level--1 {
     background-color: #fcc419;
   }
-  
   .pain-scale__level--active.pain-scale__level--2, .pain-scale__level--selected.pain-scale__level--2 {
     background-color: #f8ae1d;
   }
-  
   .pain-scale__level--active.pain-scale__level--3, .pain-scale__level--selected.pain-scale__level--3 {
     background-color: #f5a01f;
   }
-  
   .pain-scale__level--active.pain-scale__level--4, .pain-scale__level--selected.pain-scale__level--4 {
     background-color: #f39122;
   }
-  
   .pain-scale__level--active.pain-scale__level--5, .pain-scale__level--selected.pain-scale__level--5 {
     background-color: #f08224;
   }
-  
   .pain-scale__level--active.pain-scale__level--6, .pain-scale__level--selected.pain-scale__level--6 {
     background-color: #ed7427;
   }
-  
   .pain-scale__level--active.pain-scale__level--7, .pain-scale__level--selected.pain-scale__level--7 {
     background-color: #ea6529;
   }
-  
   .pain-scale__level--active.pain-scale__level--8, .pain-scale__level--selected.pain-scale__level--8 {
     background-color: #e7562b;
   }
-  
   .pain-scale__level--active.pain-scale__level--9, .pain-scale__level--selected.pain-scale__level--9 {
     background-color: #e5482e;
   }
-  
   .pain-scale__level--active.pain-scale__level--10, .pain-scale__level--selected.pain-scale__level--10 {
     background-color: #e03131;
   }
-  
   .pain-scale__level--blink {
     animation: fade 0.2s ease;
   }
-  
-  .pain-scale__level {
-    &:not(:last-child) {
-      border-right: 1px solid #fff;
-    }
-    &:first-child {
-      border-top-left-radius: 5px;
-    }
-    &:last-child {
-      border-top-right-radius: 5px;
-    }
+  .pain-scale__level:not(:last-child) {
+    border-right: 1px solid #fff;
   }
-  
+  .pain-scale__level:first-child {
+    border-top-left-radius: 5px;
+  }
+  .pain-scale__level:last-child {
+    border-top-right-radius: 5px;
+  }
   .pain-scale__number {
     display: block;
     width: 100%;
@@ -209,25 +205,21 @@
     max-width: 450px;
     margin: 0 auto;
   }
-  
   .legend__beginning {
     position: absolute;
     left: 0;
     top: 30px;
   }
-  
   @media (min-width: 768px) {
     .legend__beginning {
       transform: translatex(-50%);
     }
   }
-  
   .legend__end {
     position: absolute;
     right: 0;
     top: 30px;
   }
-  
   @media (min-width: 768px) {
     .legend__end {
       transform: translatex(50%);
@@ -238,17 +230,13 @@
     0% {
       opacity: 1;
     }
-  
     50% {
       opacity: 0.6;
     }
-  
     100% {
       opacity: 1;
     }
   }
-  
-  
   /* Human Body */
   
   .human-body {
@@ -314,3 +302,9 @@
       color: black;
     }
   }
+.headerRow {
+  background: #2BC0E4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
