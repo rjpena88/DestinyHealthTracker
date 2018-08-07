@@ -10,7 +10,10 @@ import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
 
 @Component({
-  template: `<ion-menu [content]="content">
+  template: 
+  `
+  <ion-menu [content]="content">
+
     <ion-header>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
@@ -19,14 +22,16 @@ import { Settings } from '../providers';
 
     <ion-content>
       <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
         </button>
       </ion-list>
     </ion-content>
 
   </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+
+  <ion-nav #content [root]="rootPage"></ion-nav>
+  `
 })
 export class MyApp {
   rootPage = FirstRunPage;
