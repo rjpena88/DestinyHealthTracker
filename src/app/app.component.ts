@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 // import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
-import { Tab3Root } from '../pages';
+// import { Tab3Root } from '../pages';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
@@ -19,7 +19,7 @@ import { Settings } from '../providers';
 
     <ion-content>
       <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p">
           {{p.title}}
         </button>
       </ion-list>
@@ -39,7 +39,7 @@ export class MyApp {
     { title: 'Welcome', component: 'WelcomePage' },
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Cards', component: 'CardsPage' },
-    // { title: 'Calendar', component: 'CalendarPage' },
+    { title: 'Calendar', component: 'CalendarPage' },
     { title: 'Content', component: 'ContentPage' },
     { title: 'Login', component: 'LoginPage' },
     { title: 'Signup', component: 'SignupPage' },

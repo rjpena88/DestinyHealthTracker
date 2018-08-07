@@ -10,7 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { NgCalendarModule } from 'ionic2-calendar';
 // import { NativePageTransitions } from '@ionic-native/native-page-transitions';
-import { CalendarPage } from '../pages/calendar/calendar';
+// import { CalendarPage } from '../pages/calendar/calendar';
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
@@ -39,8 +39,7 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp,
-    CalendarPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -58,8 +57,7 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    // CalendarPage
+    MyApp
   ],
   providers: [
     Api,
