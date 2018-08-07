@@ -1,16 +1,41 @@
-// expandable
+// expandable ionic
+// accordion {
 
-accordion {
+//     .card-header{
+//         background-color: map-get($colors, primary);
+//         color: #fff;
+//     }
+//     .card-content {
+//         padding: 0px 16px; 
+//         max-height: 0px;
+//     }
+// }
 
-    .card-header{
-        background-color: map-get($colors, primary);
-        color: #fff;
-    }
-    .card-content {
-        padding: 0px 16px; 
-        max-height: 0px;
-    }
+// Accirdion w3
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
 /* profile pic  */
 .profile-pic {
     max-width: 200px;
