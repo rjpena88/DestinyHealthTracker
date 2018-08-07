@@ -1,5 +1,17 @@
-/* profile pic  */
+// expandable
 
+accordion {
+
+    .card-header{
+        background-color: map-get($colors, primary);
+        color: #fff;
+    }
+    .card-content {
+        padding: 0px 16px; 
+        max-height: 0px;
+    }
+}
+/* profile pic  */
 .profile-pic {
     max-width: 200px;
     max-height: 200px;
@@ -46,207 +58,185 @@
   }
   
   /* How Are You Feeling  */
-  // @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+  @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+  /* Begin reset */
+  body,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
   
-  // /* Begin reset */
+  li {
+    list-style: none;
+  }
   
-  // body, ul {
-  //   margin: 0;
-  //   padding: 0;
-  // }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+  }
   
-  // li {
-  //   list-style: none;
-  // }
+  /* End reset */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
   
-  // h1, h2, h3, h4, h5 {
-  //   margin: 0;
-  // }
+  body {
+    background-color: #f3f5f7;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    line-height: 1.4675;
+    color: #555;
+  }
   
-  // /* End reset */
+  h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2b3535;
+    margin-bottom: 32px;
+  }
   
-  // * {
-  //   box-sizing: border-box;
-  //   &:before, &:after {
-  //     box-sizing: border-box;
-  //   }
-  // }
+  .barbar {
+    margin: 50px auto 0 auto;
+    padding: 120px 20px 130px 20px;
+    max-width: 779px;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(148, 164, 179, 0.2);
+    border-radius: 5px;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .wrapper {
+      padding: 120px 30px 130px 30px;
+    }
+  }
   
-  // body {
-  //   background-color: #f3f5f7;
-  //   font-family: "Roboto", sans-serif;
-  //   font-size: 15px;
-  //   line-height: 1.4675;
-  //   color: #555;
-  // }
+  .pain-scale {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .pain-scale:before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 32px;
+    top: 45px;
+    left: 0;
+    background-color: #dbe1e6;
+  }
+  .pain-scale:after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 32px;
+    top: 45px;
+    right: 0;
+    background-color: #dbe1e6;
+  }
+  .pain-scale__level {
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    height: 45px;
+    background: #e7ebee;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .pain-scale__level--1, .pain-scale__level--selected.pain-scale__level--1 {
+    background-color: #fcc419;
+  }
+  .pain-scale__level--active.pain-scale__level--2, .pain-scale__level--selected.pain-scale__level--2 {
+    background-color: #f8ae1d;
+  }
+  .pain-scale__level--active.pain-scale__level--3, .pain-scale__level--selected.pain-scale__level--3 {
+    background-color: #f5a01f;
+  }
+  .pain-scale__level--active.pain-scale__level--4, .pain-scale__level--selected.pain-scale__level--4 {
+    background-color: #f39122;
+  }
+  .pain-scale__level--active.pain-scale__level--5, .pain-scale__level--selected.pain-scale__level--5 {
+    background-color: #f08224;
+  }
+  .pain-scale__level--active.pain-scale__level--6, .pain-scale__level--selected.pain-scale__level--6 {
+    background-color: #ed7427;
+  }
+  .pain-scale__level--active.pain-scale__level--7, .pain-scale__level--selected.pain-scale__level--7 {
+    background-color: #ea6529;
+  }
+  .pain-scale__level--active.pain-scale__level--8, .pain-scale__level--selected.pain-scale__level--8 {
+    background-color: #e7562b;
+  }
+  .pain-scale__level--active.pain-scale__level--9, .pain-scale__level--selected.pain-scale__level--9 {
+    background-color: #e5482e;
+  }
+  .pain-scale__level--active.pain-scale__level--10, .pain-scale__level--selected.pain-scale__level--10 {
+    background-color: #e03131;
+  }
+  .pain-scale__level--blink {
+    animation: fade 0.2s ease;
+  }
+  .pain-scale__level:not(:last-child) {
+    border-right: 1px solid #fff;
+  }
+  .pain-scale__level:first-child {
+    border-top-left-radius: 5px;
+  }
+  .pain-scale__level:last-child {
+    border-top-right-radius: 5px;
+  }
+  .pain-scale__number {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    height: 32px;
+    padding-top: 5px;
+  }
   
-  // h3 {
-  //   font-size: 22px;
-  //   font-weight: 500;
-  //   color: #2b3535;
-  //   margin-bottom: 32px;
-  // }
+  .legend {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .legend__beginning {
+    position: absolute;
+    left: 0;
+    top: 30px;
+  }
+  @media (min-width: 768px) {
+    .legend__beginning {
+      transform: translatex(-50%);
+    }
+  }
+  .legend__end {
+    position: absolute;
+    right: 0;
+    top: 30px;
+  }
+  @media (min-width: 768px) {
+    .legend__end {
+      transform: translatex(50%);
+    }
+  }
   
-  // .wrapper {
-  //   margin: 50px auto 0 auto;
-  //   padding: 120px 20px 130px 20px;
-  //   max-width: 779px;
-  //   background: #fff;
-  //   box-shadow: 0 1px 3px 0 rgba(148, 164, 179, 0.2);
-  //   border-radius: 5px;
-  //   text-align: center;
-  // }
-  
-  // @media (min-width: 768px) {
-  //   .wrapper {
-  //     padding: 120px 30px 130px 30px;
-  //   }
-  // }
-  
-  // .pain-scale {
-  //   position: relative;
-  //   max-width: 450px;
-  //   margin: 0 auto;
-  //   &:before {
-  //     position: absolute;
-  //     content: "";
-  //     width: 1px;
-  //     height: 32px;
-  //     top: 45px;
-  //     left: 0;
-  //     background-color: #dbe1e6;
-  //   }
-  //   &:after {
-  //     position: absolute;
-  //     content: "";
-  //     width: 1px;
-  //     height: 32px;
-  //     top: 45px;
-  //     right: 0;
-  //     background-color: #dbe1e6;
-  //   }
-  // }
-  
-  // .pain-scale__level {
-  //   display: inline-block;
-  //   position: relative;
-  //   width: 10%;
-  //   height: 45px;
-  //   background: #e7ebee;
-  //   transition: all 0.2s ease;
-  //   cursor: pointer;
-  //   z-index: 1;
-  // }
-  
-  // .pain-scale__level--1, .pain-scale__level--selected.pain-scale__level--1 {
-  //   background-color: #fcc419;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--2, .pain-scale__level--selected.pain-scale__level--2 {
-  //   background-color: #f8ae1d;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--3, .pain-scale__level--selected.pain-scale__level--3 {
-  //   background-color: #f5a01f;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--4, .pain-scale__level--selected.pain-scale__level--4 {
-  //   background-color: #f39122;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--5, .pain-scale__level--selected.pain-scale__level--5 {
-  //   background-color: #f08224;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--6, .pain-scale__level--selected.pain-scale__level--6 {
-  //   background-color: #ed7427;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--7, .pain-scale__level--selected.pain-scale__level--7 {
-  //   background-color: #ea6529;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--8, .pain-scale__level--selected.pain-scale__level--8 {
-  //   background-color: #e7562b;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--9, .pain-scale__level--selected.pain-scale__level--9 {
-  //   background-color: #e5482e;
-  // }
-  
-  // .pain-scale__level--active.pain-scale__level--10, .pain-scale__level--selected.pain-scale__level--10 {
-  //   background-color: #e03131;
-  // }
-  
-  // .pain-scale__level--blink {
-  //   animation: fade 0.2s ease;
-  // }
-  
-  // .pain-scale__level {
-  //   &:not(:last-child) {
-  //     border-right: 1px solid #fff;
-  //   }
-  //   &:first-child {
-  //     border-top-left-radius: 5px;
-  //   }
-  //   &:last-child {
-  //     border-top-right-radius: 5px;
-  //   }
-  // }
-  
-  // .pain-scale__number {
-  //   display: block;
-  //   width: 100%;
-  //   position: absolute;
-  //   top: 45px;
-  //   left: 0;
-  //   height: 32px;
-  //   padding-top: 5px;
-  // }
-  
-  // .legend {
-  //   position: relative;
-  //   max-width: 450px;
-  //   margin: 0 auto;
-  // }
-  
-  // .legend__beginning {
-  //   position: absolute;
-  //   left: 0;
-  //   top: 30px;
-  // }
-  
-  // @media (min-width: 768px) {
-  //   .legend__beginning {
-  //     transform: translatex(-50%);
-  //   }
-  // }
-  
-  // .legend__end {
-  //   position: absolute;
-  //   right: 0;
-  //   top: 30px;
-  // }
-  
-  // @media (min-width: 768px) {
-  //   .legend__end {
-  //     transform: translatex(50%);
-  //   }
-  // }
-  
-  // @keyframes fade {
-  //   0% {
-  //     opacity: 1;
-  //   }
-  
-  //   50% {
-  //     opacity: 0.6;
-  //   }
-  
-  //   100% {
-  //     opacity: 1;
-  //   }
-  // }
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   /* Human Body */
   
   .human-body {

@@ -59,7 +59,5 @@ export class CalendarPage {
     this.selectedDay = ev.selectedTime;
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarPage');
-  }
-
+    console.log('ionViewDidLoad CalendarPage');}
 }
