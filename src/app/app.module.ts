@@ -72,4 +72,6 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
