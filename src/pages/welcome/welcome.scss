@@ -22,7 +22,7 @@ page-welcome {
   }
   .splash-logo {
     margin: auto;
-    background: url('../assets/icon/favicon.ico') repeat transparent;
+    background: url('../assets/imgs/destiny_health_tracker_logo_v1_LOGO_SMALL.png') repeat transparent;
     background-size: 100%;
     width: 128px;
     height: 128px;
@@ -43,4 +43,7 @@ page-welcome {
       background-color: rgb(220, 220, 220);
     }
   }
+}
+body {
+  background-color: #35a0ad;
 }

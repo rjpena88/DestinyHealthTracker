@@ -1,4 +1,5 @@
 <ion-content scroll="false">
+  <body>
     <div class="splash-bg"></div>
     <div class="splash-info">
       <div class="splash-logo"></div>
@@ -7,8 +8,10 @@
       </div>
     </div>
     <div padding>
-      <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
-      <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+        <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
+        <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+    
     </div>
+  </body>
   </ion-content>
   
