@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {
+  IonicPage, NavController
+} from 'ionic-angular';
 import { MainPage } from '../';
+import firebase from "firebase";
+
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -22,5 +26,13 @@ export class WelcomePage {
 
   signup() {
     this.navCtrl.push('SignupPage');
+  }
+
+
+  // Google Auth Sign Im
+  signIn() {
+    // Sign in Firebase using popup auth and Google as the identity provider.
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
   }
 }
