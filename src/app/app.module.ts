@@ -8,7 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { NgCalendarModule } from 'ionic2-calendar';
+// import { NgCalendarModule } from 'ionic2-calendar';
 // import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 // import { CalendarPage } from '../pages/calendar/calendar';
 
@@ -44,7 +44,7 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgCalendarModule,
+    // NgCalendarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -72,6 +72,6 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
