@@ -1,7 +1,7 @@
 
   .splash-bg {
     position: relative;
-    background: url('https://static1.squarespace.com/static/550f5b56e4b051bbaffb065c/t/55c0bfc0e4b074002ed72f59/1438695363048/TPPWebsiteCover.jpg?format=1500w') no-repeat transparent;
+    background: url('../assets/imgs/dht-login-bg.jpg') no-repeat transparent;
     background-size: 100vh;
     height: 45%;
     z-index: 1;
@@ -16,7 +16,7 @@
 
 
 body {
-  background-color: #35a0ad;
+  background-color:white;
 }
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
@@ -30,14 +30,14 @@ a {
   font-weight: 400;
 }
 
-h2 {
+h1 {
+  color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 35px;
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
-  color: #cccccc;
 }
 
 
@@ -57,7 +57,7 @@ h2 {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
+  background: rgb(194, 194, 194);
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -69,28 +69,13 @@ h2 {
 }
 
 #formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
+  background-color: rgb(194, 194, 194);
+  border-top: 1px solid rgb(194, 194, 194);
   padding: 25px;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-
-
-
-/* TABS */
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
-
 
 /* FORM TYPOGRAPHY*/
 
@@ -243,22 +228,22 @@ input[type=text]:placeholder {
 }
 
 /* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
+.hover:after {
   display: block;
   left: 0;
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #000000;
   content: "";
   transition: width 0.2s;
 }
 
-.underlineHover:hover {
+.hover:hover {
   color: #0d0d0d;
 }
 
-.underlineHover:hover:after{
+.hover:hover:after{
   width: 100%;
 }
 

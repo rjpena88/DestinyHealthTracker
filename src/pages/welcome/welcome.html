@@ -1,31 +1,34 @@
 <ion-content scroll="false">
+
   <body>
     <div class="splash-bg">
-    <div class="wrapper fadeInDown">
+      <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
-          <h2 class="active"> Sign In </h2>
-          <h2 class="inactive underlineHover">Sign Up </h2>
-      
+          <h1 class="title mt-4"> Destiny Health Tracker </h1>
           <!-- Icon -->
           <div class="fadeIn first">
             <img src="../assets/imgs/destiny_health_tracker_loginlogo.png" id="icon" alt="User Icon" />
           </div>
-      
+
           <!-- Login Form -->
           <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password">
+            <button ion-button color="danger" ion-button round (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
           </form>
-      
+          <!-- Google Auth Sign In -->
+          <form>
+
+            <button ion-button color="danger" ion-button round (click)="signIn()" class="login">Sign In With Google</button>
+          </form>
+
           <!-- Remind Passowrd -->
           <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
+            <a class="hover">Forgot Password?</a>
           </div>
         </div>
-        </div>
       </div>
+    </div>
   </body>
-  </ion-content>
-  
+</ion-content>
