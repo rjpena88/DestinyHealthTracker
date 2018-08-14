@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { HttpClient } from '../../../node_modules/@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -9,7 +10,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 export class CardsPage {
   cardItems: any[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public http: HttpClient) {
     this.cardItems = [
       {
         //Prescription Array ( Need rX API! )
@@ -39,6 +40,10 @@ export class CardsPage {
   }
 
   getData(){
-    console.log("clicked");
+    var url = 'https://jsonplaceholder.typicode.com/posts/1';
+    this.data = this.http.get(url);
+    this.data.subscribe(data =>{
+      console.log("data");
+    });
   }
 }
