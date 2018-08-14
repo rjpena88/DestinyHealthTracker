@@ -40,10 +40,10 @@ export class CardsPage {
   }
 
   getData(){
-    var url = 'https://jsonplaceholder.typicode.com/posts/1';
-    this.data = this.http.get(url);
-    this.data.subscribe(data =>{
-      console.log("data");
-    });
+  //   var url = 'https://jsonplaceholder.typicode.com/posts/1';
+  //   this.data = this.http.get(url);
+  //   this.data.subscribe(data =>{
+  //     console.log("data");
+    // });
   }
 }
