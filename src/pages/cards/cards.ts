@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { HttpClient } from '../../../node_modules/@angular/common/http';
+import { HttpClient,HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -10,35 +11,11 @@ import { HttpClient } from '../../../node_modules/@angular/common/http';
 export class CardsPage {
   cardItems: any[];
 
+  result:any= [];
+  data: Observable<any>;
   constructor(public navCtrl: NavController, public http: HttpClient) {
     this.cardItems = [
-      {
-        user: {
-          avatar: 'assets/img/marty-avatar.png',
-          name: 'Marty McFly'
-        },
-        date: 'November 5, 1955',
-        image: 'assets/img/advance-card-bttf.png',
-        content: 'Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.',
-      },
-      {
-        user: {
-          avatar: 'assets/img/sarah-avatar.png.jpeg',
-          name: 'Sarah Connor'
-        },
-        date: 'May 12, 1984',
-        image: 'assets/img/advance-card-tmntr.jpg',
-        content: 'I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.'
-      },
-      {
-        user: {
-          avatar: 'assets/img/ian-avatar.png',
-          name: 'Dr. Ian Malcolm'
-        },
-        date: 'June 28, 1990',
-        image: 'assets/img/advance-card-jp.jpg',
-        content: 'Your scientists were so preoccupied with whether or not they could, that they didn\'t stop to think if they should.'
-      },
+      
       {
         //Prescription Array ( Need rX API! )
         user: {
@@ -67,10 +44,10 @@ export class CardsPage {
   }
 
   getData(){
-  //   var url = 'https://jsonplaceholder.typicode.com/posts/1';
-  //   this.data = this.http.get(url);
-  //   this.data.subscribe(data =>{
-  //     console.log("data");
-    // });
+    var url = 'https://jsonplaceholder.typicode.com/posts/1';
+    this.data = this.http.get(url);
+    this.data.subscribe(data =>{
+      this.result=data;
+    });
   }
 }

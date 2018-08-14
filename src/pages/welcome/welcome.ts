@@ -3,7 +3,7 @@ import {
   IonicPage, NavController
 } from 'ionic-angular';
 import { MainPage } from '../';
-import * as firebase from 'firebase'
+// import * as firebase from 'firebase'
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
