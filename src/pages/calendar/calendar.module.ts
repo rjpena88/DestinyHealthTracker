@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
@@ -7,9 +9,11 @@ import { CalendarPage } from './calendar';
   declarations: [
     CalendarPage,
   ],
-  imports: [
+  imports: [ 
+    FormsModule, 
+    MbscModule,
     IonicPageModule.forChild(CalendarPage),
-    TranslateModule,
+    TranslateModule.forChild()
   ],
   exports: [
     CalendarPage
