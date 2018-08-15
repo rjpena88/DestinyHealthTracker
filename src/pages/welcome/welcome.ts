@@ -3,7 +3,7 @@ import {
   IonicPage, NavController
 } from 'ionic-angular';
 import { MainPage } from '../';
-import * as firebase from 'firebase'
+import { DataService } from '../../providers/data/data.service';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -18,10 +18,20 @@ import * as firebase from 'firebase'
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+  email:string;
+  password:string;
+
+// Move to cards.ts
+  constructor(public navCtrl: NavController, private auth: DataService) {
+    this.auth.getDrugById(61).subscribe(console.log);
+   }
 
   login() {
-    this.navCtrl.push(MainPage);
+    this.auth.login(this.email, this.password).then((data) => {
+      this.navCtrl.push(MainPage);
+    }, (error:any) => {
+      this.navCtrl.push(WelcomePage);
+    });
   }
 
   signup() {
