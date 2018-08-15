@@ -12,15 +12,30 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 // import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 // import { CalendarPage } from '../pages/calendar/calendar';
 
+// Angular Fire Imports
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
+import { DataService } from '../providers/data/data.service';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+var config = {
+  apiKey: "AIzaSyBnZlYOcWL01_sJyF2SF8QiT4GJKSabNnw",
+  authDomain: "destiny-health-tracker.firebaseapp.com",
+  databaseURL: "https://destiny-health-tracker.firebaseio.com",
+  projectId: "destiny-health-tracker",
+  storageBucket: "",
+  messagingSenderId: "338949938661"
+};
 
 export function provideSettings(storage: Storage) {
   /**
@@ -44,6 +59,9 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     // NgCalendarModule,
     TranslateModule.forRoot({
       loader: {
@@ -69,7 +87,9 @@ export function provideSettings(storage: Storage) {
     // NativePageTransitions,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    DataService,
+    AngularFireDatabase,
   ]
 })
 export class AppModule {
