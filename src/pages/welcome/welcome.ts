@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  IonicPage, NavController
-} from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { MainPage } from '../';
 import { DataService } from '../../providers/data/data.service';
 
@@ -11,6 +9,7 @@ import { DataService } from '../../providers/data/data.service';
  * If you'd like to immediately put the user onto a login/signup page,
  * we recommend not using the Welcome page.
 */
+
 @IonicPage()
 @Component({
   selector: 'page-welcome',
@@ -38,6 +37,9 @@ export class WelcomePage {
     this.navCtrl.push('SignupPage');
   }
 
+  logout() {
+    return this.afAuth.auth.signOut();
+  }
 
   // Google Auth Sign Im
   signIn() {
