@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MbscEventcalendarOptions } from '@mobiscroll/angular';
 
 let now = new Date();
 
@@ -142,12 +141,12 @@ export class CalendarPage {
     color: '#a63e14'
   }];
 
-  eventSettings: MbscEventcalendarOptions = {
-    theme: 'ios',
-    display: 'inline',
-    view: {
-      calendar: { type: 'month' },
-      eventList: { type: 'month' }
-    }
-  };
+  // eventSettings: MbscEventcalendarOptions = {
+  //   theme: 'ios',
+  //   display: 'inline',
+  //   view: {
+  //     calendar: { type: 'month' },
+  //     eventList: { type: 'month' }
+  //   }
 }
+

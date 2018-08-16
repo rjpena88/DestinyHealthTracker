@@ -1,5 +1,4 @@
 import { FormsModule } from '@angular/forms';
-import { MbscModule } from '@mobiscroll/angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -59,8 +58,7 @@ export function provideSettings(storage: Storage) {
     MyApp
   ],
   imports: [ 
-    FormsModule, 
-    MbscModule,
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp(config),
