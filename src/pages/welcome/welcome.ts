@@ -37,10 +37,6 @@ export class WelcomePage {
     this.navCtrl.push('SignupPage');
   }
 
-  logout() {
-    return this.afAuth.auth.signOut();
-  }
-
   // Google Auth Sign Im
   signIn() {
     // Sign in Firebase using popup auth and Google as the identity provider.
