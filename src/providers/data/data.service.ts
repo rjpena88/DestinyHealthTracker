@@ -3,9 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import firebase from 'firebase/app';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
 
   private user: firebase.User;
@@ -20,7 +18,8 @@ export class DataService {
 
   // Test Prescription logic
   getDrugById(id: number) {
-    return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366')).valueChanges();
+    //return this.db.database.ref('results').orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366').;
+    return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366').limitToFirst(5)).valueChanges();
   }
 
   // Welcome logic

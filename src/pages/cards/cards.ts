@@ -44,11 +44,13 @@ export class CardsPage {
   }
 
   getData(){
+    /*
     var url = 'https://destiny-health-tracker.firebaseio.com/rx';
     this.data = this.http.get(url);
     this.data.subscribe(data =>{
       console.log(data);
       // this.result=data;
     });
+    */
   }
 }

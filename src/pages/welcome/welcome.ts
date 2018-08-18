@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
 import { MainPage } from '../';
 import { DataService } from '../../providers/data/data.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase';
+
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -21,7 +24,7 @@ export class WelcomePage {
   password:string;
 
 // Move to cards.ts
-  constructor(public navCtrl: NavController, private auth: DataService) {
+  constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth) {
     this.auth.getDrugById(61).subscribe(console.log);
    }
 
@@ -40,7 +43,9 @@ export class WelcomePage {
   // Google Auth Sign Im
   signIn() {
     // Sign in Firebase using popup auth and Google as the identity provider.
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    // var provider = new firebase.auth.GoogleAuthProvider();
+    // firebase.auth().signInWithPopup(provider);
+    this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+
   }
 }
