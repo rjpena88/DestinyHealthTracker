@@ -14,6 +14,7 @@ export class DataService {
       this.user = usr;
     });
     this.DrugList = db.list<any>('results');
+    console.log(this.DrugList);
   }
 
   // Test Prescription logic

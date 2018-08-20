@@ -17,7 +17,7 @@ export class WelcomePage {
 
   // Move to cards.ts
   constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
-    this.auth.getDrugById(61).subscribe(console.log);
+    // this.auth.getDrugById(61).subscribe(console.log);
   }
 
   login() {
