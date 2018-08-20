@@ -1,6 +1,5 @@
 /* profile pic  */
 .profile-pic {
-    max-width: 200px;
     max-height: 200px;
     display: block;
   }
@@ -10,15 +9,15 @@
   }
   
   .circle {
+    margin: 0%;
     border-radius: 1000px !important;
     overflow: hidden;
-    width: 128px;
-    height: 128px;
+    width: 150px;
+    height: 150px;
     border: 8px solid rgba(255, 255, 255, 0.7);
     // position: absolute;
     // top: 72px;
-    background-color: orange;
-    float: left;
+    background-color:  rgba(9, 81, 83, 0.404);
   }
   
   img {
@@ -380,4 +379,8 @@
 }
 .heightinput {
   text-align:center;
+}
+
+u {
+  color: red;
 }
