@@ -1,6 +1,7 @@
-//@ts-check
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { DataService } from '../../providers/data/data.service';
 import * as $ from "jquery";
 
 
@@ -10,8 +11,11 @@ import * as $ from "jquery";
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) { }
   
+  logout() {
+    return this.afAuth.auth.signOut();
+  }
 
 }
 
