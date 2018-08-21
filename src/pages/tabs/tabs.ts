@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
 import { Tab1Root, Tab2Root, Tab3Root, Tab4Root, Tab5Root } from '../';
+import { CalendarPage } from '../calendar/calendar'
 
 @IonicPage()
 @Component({

@@ -1,13 +1,41 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title text-center>{{ 'CARDS_TITLE' | translate }}</ion-title>
+    <ion-title text-center>Prescriptions</ion-title>
+    <button ion-button round (click)='logout()' class="float-right"><ion-icon name="power"></ion-icon></button>
   </ion-navbar>
-
+  <div class="row headerRow p-3">
+    <div class="col-sm-0">
+      <div class="circle">
+        <i class="fas fa-cog"></i>
+        <img class="profile-pic" src="">
+        <!-- Default Image -->
+        <img src="">
+        <div class="p-image">
+          <i class="fa fa-camera upload-button"></i>
+          <input class="file-upload" type="file" accept="image/*" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-5 col-md-6">
+        <div class="bio">
+          <p class="p-0 m-0">Name:</p>
+          <p class="p-0 m-0">Age:</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-header>
 
 
+
 <ion-content>
+
+  <!-- API TESTING -->
+  <button ion-button (click)="getData()">Get Data</button>
+  <!-- <ion-row>Body:{{result.body}}</ion-row>
+    <ion-row>ID:{{result.id}}</ion-row>
+    <ion-row>Title:{{result.title}}</ion-row> -->
 
   <ion-card *ngFor="let item of cardItems">
 
@@ -29,15 +57,15 @@
     <ion-row>
       <ion-col>
         <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='thumbs-up'></ion-icon>
-            12 Likes
-          </button>
+          <ion-icon name='thumbs-up'></ion-icon>
+          12 Likes
+        </button>
       </ion-col>
       <ion-col>
         <button ion-button color="primary" clear small icon-start>
-            <ion-icon name='text'></ion-icon>
-            4 Comments
-          </button>
+          <ion-icon name='text'></ion-icon>
+          4 Comments
+        </button>
       </ion-col>
       <ion-col center text-center>
         <ion-note>
