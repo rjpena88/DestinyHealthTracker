@@ -28,40 +28,131 @@
         <hr>
 </ion-header>
 
-<ion-content>
-
-  <form [formGroup]="form" *ngIf="settingsReady">
-    <ion-list *ngIf="page == 'main'">
+<ion-content class="list-avatar-page">
+    <ion-list>
+  
+      <ion-list-header>Today</ion-list-header>
+  
       <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
-        <ion-toggle formControlName="option1"></ion-toggle>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/12758.jpg">
+        </ion-avatar>
+        <h2>Kim B. Abell, M.D.</h2>
+        <p>This town ain't big enough for the two of us!</p>
+        <ion-note item-end>3:43 pm</ion-note>
       </ion-item>
-
+  
       <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION2' | translate }}</ion-label>
-        <ion-input formControlName="option2"></ion-input>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/18696.jpg">
+        </ion-avatar>
+        <h2>Derek E. Bell, M.D.</h2>
+        <p>My eyeballs could have been sucked from their sockets!</p>
+        <ion-note item-end>1:12 pm</ion-note>
       </ion-item>
-
+  
       <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION3' | translate }}</ion-label>
-        <ion-select formControlName="option3">
-          <ion-option value="1" checked="true">1</ion-option>
-          <ion-option value="2">2</ion-option>
-          <ion-option value="3">3</ion-option>
-        </ion-select>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/6356.jpg">
+        </ion-avatar>
+        <h2>Adrienne D. Bonham, M.D., M.S.</h2>
+        <p>Well aren't you just the sweetest space toy I ever did meet!</p>
+        <ion-note item-end>10:03 am</ion-note>
       </ion-item>
-
-      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
-        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
-      </button>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/2985.jpg">
+        </ion-avatar>
+        <h2>Gaylinn M. Greenwood, M.D.</h2>
+        <p>You're not turning me into a Mashed Potato.</p>
+        <ion-note item-end>5:47 am</ion-note>
+      </ion-item>
+  
     </ion-list>
-
-    <ion-list *ngIf="page == 'profile'">
+  
+    <ion-list>
+  
+      <ion-list-header>Yesterday</ion-list-header>
+  
       <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
-        <ion-input formControlName="option4"></ion-input>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/6400.jpg">
+        </ion-avatar>
+        <h2>Bryan A. Henry, M.D.</h2>
+        <p>You heard of Kung Fu? Well get ready for pork chop.</p>
+        <ion-note item-end>11:11 pm</ion-note>
       </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/4385.jpg">
+        </ion-avatar>
+        <h2>Diana Herrmann, M.D.</h2>
+        <p>"Providing continuity of care, not just from birth through adulthood, but to all members within a family, is fascinating to me."</p>
+        <ion-note item-end>8:54 pm</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/23974.jpg">
+        </ion-avatar>
+        <h2>Sveta Karelsky, M.D.</h2>
+        <p>Were you scared? Tell me honestly.</p>
+        <ion-note item-end>7:22 am</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/7688.jpg">
+        </ion-avatar>
+        <h2>Marc S. Lavender, M.D.</h2>
+        <p>Neigh!</p>
+        <ion-note item-end>2:08 am</ion-note>
+      </ion-item>
+  
     </ion-list>
-  </form>
+  
+    <ion-list>
+  
+      <ion-list-header>Last Week</ion-list-header>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/24129.jpg">
+        </ion-avatar>
+        <h2>Lisa R. Lincoln, M.D.</h2>
+        <p>So, who's ready for Ken's dream tour?</p>
+        <ion-note item-end>Sun</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/2984.jpg">
+        </ion-avatar>
+        <h2>Alan D. Lorenz, M.D.</h2>
+        <p>The claw is our master.</p>
+        <ion-note item-end>Fri</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/4947.jpg">
+        </ion-avatar>
+        <h2>Marilyn N. Ling, M.D.</h2>
+        <p>Code Red, repeat: We're at Code Red!</p>
+        <ion-note item-end>Wed</ion-note>
+      </ion-item>
+  
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="https://www.urmc.rochester.edu/ecv_binary/faculty/generated/profile_web/9734.jpg">
+        </ion-avatar>
+        <h2>BHong Zhang, M.D., Ph.D.</h2>
+        <p>What would you say if I get someone else to watch the sheep for me tonight?</p>
+        <ion-note item-end>Mon</ion-note>
+      </ion-item>
+  
+    </ion-list>
 
 </ion-content>
