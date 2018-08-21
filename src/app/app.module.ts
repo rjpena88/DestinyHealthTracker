@@ -29,12 +29,12 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 var config = {
-  apiKey: "AIzaSyBnZlYOcWL01_sJyF2SF8QiT4GJKSabNnw",
-  authDomain: "destiny-health-tracker.firebaseapp.com",
-  databaseURL: "https://destiny-health-tracker.firebaseio.com",
-  projectId: "destiny-health-tracker",
-  storageBucket: "",
-  messagingSenderId: "338949938661"
+  apiKey: "AIzaSyAaj5fLFgv6Xaiqt_yhf4pEMEXHBcTyVfI",
+  authDomain: "destiny-health-tracker-app.firebaseapp.com",
+  databaseURL: "https://destiny-health-tracker-app.firebaseio.com",
+  projectId: "destiny-health-tracker-app",
+  storageBucket: "destiny-health-tracker-app.appspot.com",
+  messagingSenderId: "670569498272"
 };
 
 export function provideSettings(storage: Storage) {
