@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { HttpClient,HttpClientModule } from '../../../node_modules/@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { DataService } from '../../providers/data/data.service';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,8 @@ export class CardsPage {
 
   result:any= [];
   data: Observable<any>;
-  constructor(public navCtrl: NavController, public http: HttpClient) {
+  constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
+    this.auth.getDrugById(61).subscribe(console.log);
     this.cardItems = [
       
       {
@@ -44,13 +46,11 @@ export class CardsPage {
   }
 
   getData(){
-    /*
-    var url = 'https://destiny-health-tracker.firebaseio.com/rx';
-    this.data = this.http.get(url);
-    this.data.subscribe(data =>{
-      console.log(data);
-      // this.result=data;
-    });
-    */
+    // var url = 'https://destiny-health-tracker.firebaseio.com/rx';
+    // this.data = this.http.get(url);
+    // this.data.subscribe(data =>{
+    //   console.log(data);
+    //   // this.result=data;
+    };
   }
-}
+
