@@ -3,7 +3,9 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { MainPage } from '../';
 import { DataService } from '../../providers/data/data.service';
 import { AngularFireAuth } from 'angularfire2/auth';
-// import { auth } from 'firebase';
+import { auth } from 'firebase';
+import { firebase } from 'firebase';
+// import  *  as "firebase";
 
 @IonicPage()
 @Component({
@@ -38,11 +40,11 @@ export class WelcomePage {
   }
 
   // Ionic Google Auth Sign In - NOT IN USE
-  // signIn() {
-  // Sign in Firebase using popup auth and Google as the identity provider.
-  // var provider = new firebase.auth.GoogleAuthProvider();
-  // firebase.auth().signInWithPopup(provider);
-  // this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  signIn() {
+    // Sign in Firebase using popup auth and Google as the identity provider.
+    // var provider = new firebase.auth.GoogleAuthProvider();
+    // firebase.auth().signInWithPopup(provider);
+    // this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
 
+  }
 }
-

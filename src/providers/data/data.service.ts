@@ -18,10 +18,10 @@ export class DataService {
   }
 
   // Test Prescription logic
-  getDrugById(id: number) {
+  // getDrugById(id: number) {
     //return this.db.database.ref('results').orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366').;
-    return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366').limitToFirst(5)).valueChanges();
-  }
+  //   return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366').limitToFirst(5)).valueChanges();
+  // }
 
   // Welcome logic
 
