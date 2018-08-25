@@ -3,6 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../providers/data/data.service';
 import * as $ from "jquery";
+import firebase from 'firebase/app';
 
 
 @IonicPage()
@@ -28,7 +29,7 @@ $(document).ready(function () {
       reader.onload = function (e: any) {
         let target: any = e.target; //<-- This (any) will tell compiler to shut up!
         let content: string = target.result;
-        $(".profile-pic").attr("src", this.result);
+        $(".profile-pic").attr("src", target.result);
       };
 
       reader.readAsDataURL(input.files[0]);
