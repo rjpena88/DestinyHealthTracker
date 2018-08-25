@@ -24,7 +24,7 @@ $(document).ready(function () {
       reader.onload = function (e: any) {
         let target: any = e.target; //<-- This (any) will tell compiler to shut up!
         let content: string = target.result;
-        $(".profile-pic").attr("src", this.result);
+        // $(".profile-pic").attr("src", this.result);
       };
 
       reader.readAsDataURL(input.files[0]);

@@ -20,8 +20,14 @@ export class DataService {
 
   // Test Prescription logic
   getDrugById(id: number) {
-    return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366')).valueChanges();
+    // return this.db.list('results', ref => ref.orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366')).limitToFirst(5)).valueChanges();
   }
+
+  // getData(){
+  //   const rootRef = firebase.database().ref();
+
+  //   const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
+  //   };
 
   // Welcome logic
 
