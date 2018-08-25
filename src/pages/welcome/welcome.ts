@@ -4,6 +4,7 @@ import { MainPage } from '../';
 import { DataService } from '../../providers/data/data.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+import firebase from 'firebase/app';
 
 @IonicPage()
 @Component({
@@ -15,10 +16,13 @@ export class WelcomePage {
   email: string;
   password: string;
 
-// Move to cards.ts
-  constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth) {
-    this.auth.getDrugById(61).subscribe(console.log);
-   }
+  // Move to cards.ts
+  constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
+    
+    // this.auth.getDrugById(61).subscribe(console.log);
+    console.log("this is it");
+    this.auth.getDrugById(61);
+  }
 
   login() {
     this.auth.login(this.email, this.password).then((data) => {
@@ -40,13 +44,9 @@ export class WelcomePage {
   // Ionic Google Auth Sign In - NOT IN USE
   signIn() {
     // Sign in Firebase using popup auth and Google as the identity provider.
-    // var provider = new firebase.auth.GoogleAuthProvider();
-    // firebase.auth().signInWithPopup(provider);
-    
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
     this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-
-
-
 
   }
 }

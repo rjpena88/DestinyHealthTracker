@@ -52,5 +52,7 @@ export class CardsPage {
     //   console.log(data);
     //   // this.result=data;
     };
-  }
+
+
+}
 
