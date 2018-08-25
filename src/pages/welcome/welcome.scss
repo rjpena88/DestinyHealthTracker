@@ -1,12 +1,12 @@
 
   .splash-bg {
     position: relative;
-    background: url('../assets/imgs/dht-login-bg.jpg') no-repeat transparent;
+    background: url('https://thumbs.gfycat.com/UnnaturalLawfulGalapagostortoise-size_restricted.gif') no-repeat transparent;
     background-size: 100vh;
-    height: 45%;
+    height: 100%;
     z-index: 1;
     background-repeat: repeat-x;
-    animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 0s linear infinite;
   }
 
   @keyframes animatedBackground {
@@ -16,7 +16,7 @@
 
 
 body {
-  background-color:white;
+  background-color:rgb(0, 0, 0);
 }
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
@@ -55,6 +55,7 @@ h1 {
 }
 
 #formContent {
+  border: solid white;
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: rgb(194, 194, 194);

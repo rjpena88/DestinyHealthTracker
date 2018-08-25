@@ -59,17 +59,6 @@ export class CardsPage {
     const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
     };
 
-    getItems(ev) {
-      let val = ev.target.value;
-      if (!val || !val.trim()) {
-        this.currentItems = [];
-        return;
-      }
-      this.currentItems = this.items.query({
-        name: val
-      });
-    }
 
-  }
-
+}
 

@@ -1,8 +1,9 @@
 /* profile pic  */
 .profile-pic {
-    max-width: 200px;
     max-height: 200px;
     display: block;
+    padding: 0px;
+    margin: 0px;
   }
   
   .file-upload {
@@ -12,23 +13,22 @@
   .circle {
     border-radius: 1000px !important;
     overflow: hidden;
-    width: 128px;
-    height: 128px;
+    width: 130px;
+    height: 130px;
     border: 8px solid rgba(255, 255, 255, 0.7);
     // position: absolute;
     // top: 72px;
-    background-color: orange;
-    float: left;
+    background-color:  rgba(255, 255, 255, 0.7);
   }
   
   img {
     max-width: 100%;
-    height: auto;
+    // height: auto;
   }
   
   .p-image {
     position: absolute;
-    top: 115px;
+    top: 160px;
     left: 100px;
     color: #ffffff;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -324,4 +324,69 @@
   background-size: cover;
   // background: #35a0ad;  /* fallback for old browsers */
   // https://ak8.picdn.net/shutterstock/videos/12587588/thumb/1.jpg
+}
+// heart rate
+#heartRate {
+	color: RED;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 200;
+	.label {
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.heart-ico {
+		font-size: 3.3rem;
+		color: RED;
+		margin-right: 10px;
+		font-weight: 100;
+		position: relative;
+		top: -2px;
+	}
+	.heartRateCounter {
+		font-size: 4rem;
+	}
+}
+// weight
+:root {
+  --x: 16px;
+}
+
+.dial {
+  background-image: 
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='100' stroke='#EEEEEE' stroke-width='1'><path d='M 0,25 V 100' stroke='#CCCCCC' stroke-width='2' /><path d='M 15,50 V 100' /><path d='M 30,50 V 100' /> <path d='M 45,50 V 100' /><path d='M 60,50 V 100' /></svg>");
+  background-position: 50% 50%;
+  background-position-x: var(--x);
+  background-repeat: repeat-x;
+  cursor: move;  
+  height: 100px;
+  position: relative;
+}
+
+.dial:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100px;
+  transform: translate3d(-1px, 0, 0);
+  background-color: red;
+}
+
+.mw5-5 { width: 384px; }
+
+.weightinput {
+  text-align:center;
+}
+.heightinput {
+  text-align:center;
+}
+
+u {
+  color: red;
+}
+
+.dhr-green {
+  color: #35a0ad;
+
 }

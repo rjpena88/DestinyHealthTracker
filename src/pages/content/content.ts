@@ -1,7 +1,9 @@
-//@ts-check
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { DataService } from '../../providers/data/data.service';
 import * as $ from "jquery";
+import firebase from 'firebase/app';
 
 
 @IonicPage()
@@ -10,8 +12,11 @@ import * as $ from "jquery";
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) { }
   
+  logout() {
+    return this.afAuth.auth.signOut();
+  }
 
 }
 
@@ -24,7 +29,7 @@ $(document).ready(function () {
       reader.onload = function (e: any) {
         let target: any = e.target; //<-- This (any) will tell compiler to shut up!
         let content: string = target.result;
-        // $(".profile-pic").attr("src", this.result);
+        $(".profile-pic").attr("src", target.result);
       };
 
       reader.readAsDataURL(input.files[0]);
@@ -78,3 +83,12 @@ $(".pain-scale__level").click(function () {
       }
     );
 });
+// Heart Rate 
+var bpm = setInterval(function(){
+
+  var heartRate = [82,82,83,83,84,84,85,86]
+  var rand = heartRate[Math.floor(Math.random() * heartRate.length)];
+    
+    $('.heartRateCounter').text(rand);
+  
+  }, 1000);

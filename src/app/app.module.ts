@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -56,7 +57,8 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp
   ],
-  imports: [
+  imports: [ 
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp(config),
