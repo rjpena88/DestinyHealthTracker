@@ -1,17 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title class="text-center">{{ 'SEARCH_TITLE' | translate }}</ion-title>
-    <button ion-button round (click)='logout()' class="float-right"><ion-icon name="power"></ion-icon></button>
+    <ion-title text-center>Welcome Patient
+      <ion-icon name="power" (onClick)='logout()' class="float-right dhr-green"></ion-icon></ion-title>
   </ion-navbar>
-  <div class="row headerRow p-3">
+  <div class="row headerRow pl-4">
     <div class="col-sm-0">
       <div class="circle">
-        <i class="fas fa-cog"></i>
-          <img class="profile-pic" src="">
+          <img class="profile-pic p-0 m-0" src="">
         <!-- Default Image -->
         <img src="">
           <div class="p-image">
-            <i class="fa fa-camera upload-button"></i>
             <input class="file-upload" type="file" accept="image/*" />
           </div> 
         </div>
@@ -23,9 +21,8 @@
             <p class="p-0 m-0">Age:</p>
           </div>  
         </div>
-        </div>
-        </div>
-        <hr>
+      </div>
+    </div>
 </ion-header>
 
 
