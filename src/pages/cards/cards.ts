@@ -15,9 +15,11 @@ export class CardsPage {
   result:any= [];
   data: Observable<any>;
   constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
-    this.auth.getDrugById(61).subscribe(console.log);
+    this.auth.getDrugById(61).subscribe(data => {
+      console.log(data);
+      console.log("returned id");
+    });
     this.cardItems = [
-      
       {
         //Prescription Array ( Need rX API! )
         user: {

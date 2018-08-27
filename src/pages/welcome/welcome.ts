@@ -18,10 +18,11 @@ export class WelcomePage {
 
   // Move to cards.ts
   constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
+
     
     // this.auth.getDrugById(61).subscribe(console.log);
-    console.log("this is it");
-    this.auth.getDrugById(61);
+    // console.log("this is it");
+    // this.auth.getUserById("TcKr9t0s7hZP4v4dBiTj8Wg31wN2").subscribe(console.log);
   }
 
   login() {
@@ -34,11 +35,6 @@ export class WelcomePage {
 
   logout() {
     return this.afAuth.auth.signOut();
-  }
-
-
-  signup() {
-    this.navCtrl.push('SignupPage');
   }
 
   // Ionic Google Auth Sign In - NOT IN USE
