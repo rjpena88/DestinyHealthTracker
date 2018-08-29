@@ -39,12 +39,14 @@
       <li class="legend__end">Very severe</li>
     </ul>
   </div>
+
   <!-- Health Data -->
   <accordion title="Height" class="heightinput">
-    <div class="tc mb2">
-      <span id="lbs-value" class="ma0 f2 b dark-gray">5'4</span>
-      <span class="ma0 moon-gray">ft</span>
-    </div>
+      <p class="lastRecord">Last recorded height on ((Date))</p>
+      <div class="tc mb2">
+        <span id="lbs-value" class="ma0 f2 b dark-gray">5'4</span>
+        <span class="ma0 moon-gray">ft</span>
+      </div>
 
     <p class="ma0 tc mb4 moon-gray f6"><span id="kg-value">162.56</span> cm </p>
 
@@ -52,7 +54,9 @@
     <div class="tc">
     </div>
   </accordion>
+
   <accordion title="Weight" class="weightinput">
+    <p class="lastRecord">Last recorded Weight on ((Date))</p>
     <div class="tc mb2">
       <span id="lbs-value" class="ma0 f2 b dark-gray">125</span>
       <span class="ma0 moon-gray">lbs</span>
@@ -65,6 +69,7 @@
     </div>
   </accordion>
   <accordion title="Heart Rate"> 
+      <p class="lastRecordgreen">"CONNECTED TO APPLE WATCH"</p>
       <div id="heartRate">
           <div class="label">Heart rate</div>
           <span class="heart-ico fa fa-heart animated infinite pulse"></span>
