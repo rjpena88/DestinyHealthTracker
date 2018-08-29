@@ -1,31 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title text-center>Prescriptions</ion-title>
-    <button ion-button round (click)='logout()' class="float-right"><ion-icon name="power"></ion-icon></button>
-  </ion-navbar>
-  <div class="row headerRow p-3">
-    <div class="col-sm-0">
-      <div class="circle">
-        <i class="fas fa-cog"></i>
-        <img class="profile-pic" src="">
-        <!-- Default Image -->
-        <img src="">
-        <div class="p-image">
-          <i class="fa fa-camera upload-button"></i>
-          <input class="file-upload" type="file" accept="image/*" />
+    <ion-navbar>
+      <ion-title text-center>Medications
+        <ion-icon name="power" (onClick)='logout()' class="float-right dhr-green"></ion-icon></ion-title>
+    </ion-navbar>
+    <div class="row headerRow pl-4">
+      <div class="col-sm-0">
+      </div>
+      <div class="row">
+        <div class="col-5 col-md-6">
+            <div class="bio">
+              <p class="p-0 m-0"></p>    
+              <p class="p-0 m-0"></p>
+            </div>  
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-5 col-md-6">
-        <div class="bio">
-          <p class="p-0 m-0">Name:</p>
-          <p class="p-0 m-0">Age:</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</ion-header>
+  </ion-header>
 
 
 

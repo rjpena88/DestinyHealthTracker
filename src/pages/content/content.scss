@@ -15,10 +15,10 @@
     overflow: hidden;
     width: 130px;
     height: 130px;
-    border: 8px solid rgba(255, 255, 255, 0.7);
+    border: 8px solid #35a0ad;
     // position: absolute;
     // top: 72px;
-    background-color:  rgba(255, 255, 255, 0.7);
+    background-color:  rgba(27, 92, 97, 0.377);
   }
   
   img {
@@ -28,9 +28,9 @@
   
   .p-image {
     position: absolute;
-    top: 160px;
+    top: 150px;
     left: 100px;
-    color: #ffffff;
+    color: white;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     &:hover {
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -389,4 +389,14 @@ u {
 .dhr-green {
   color: #35a0ad;
 
+}
+
+.lastRecord {
+  color: red !important; 
+  text-align: center;
+}
+.lastRecordgreen {
+  color: rgb(13, 216, 13) !important;
+  text-align: center;
+  text-decoration: underline;
 }
