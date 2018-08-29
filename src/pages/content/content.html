@@ -25,27 +25,42 @@
       </div>
     </div>
   </div>
-  <hr>
 </ion-header>
 <!-- Main Content -->
 <ion-content padding scroll="true">
     <!-- How are you feeling -->
-<div class="container">
-    <h3>How are you feeling?</h3>
-    <ul class="pain-scale">
-      <li class="pain-scale__level pain-scale__level--1"><span class="pain-scale__number">1</span></li><li class="pain-scale__level pain-scale__level--2"><span class="pain-scale__number">2</span></li><li class="pain-scale__level pain-scale__level--3"><span class="pain-scale__number">3</span></li><li class="pain-scale__level pain-scale__level--4"><span class="pain-scale__number">4</span></li><li class="pain-scale__level pain-scale__level--5"><span class="pain-scale__number">5</span></li><li class="pain-scale__level pain-scale__level--6"><span class="pain-scale__number">6</span></li><li class="pain-scale__level pain-scale__level--7"><span class="pain-scale__number">7</span></li><li class="pain-scale__level pain-scale__level--8"><span class="pain-scale__number">8</span></li><li class="pain-scale__level pain-scale__level--9"><span class="pain-scale__number">9</span></li><li class="pain-scale__level pain-scale__level--10"><span class="pain-scale__number">10</span></li>
-    </ul>
-    <ul class="legend">
-      <li class="legend__beginning">Mild</li>
-      <li class="legend__end">Very severe</li>
-    </ul>
-  </div>
+    <h3 class="pt-3">How are you feeling today?</h3>
+    <div class="container py-4">
+     
+
+        <input type="radio" class="radio" name="progress" value="zero" id="zero" checked>
+
+        <input type="radio" class="radio" name="progress" value="five" id="five">
+        <label for="five" class="label"><i class="fas fa-grin-beam face"></i></label>
+      
+        <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive">
+        <label for="twentyfive" class="label"><i class="fas fa-smile-beam face"></i></label>
+      
+        <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
+        <label for="fifty" class="label"><i class="fas fa-meh-blank face"></i></label>
+      
+        <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive">
+        <label for="seventyfive" class="label"><i class="fas fa-frown face"></i></label>
+      
+        <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
+        <label for="onehundred" class="label"><i class="fas fa-sad-cry face"></i></label>
+      
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
   <!-- Health Data -->
   <accordion title="Height" class="heightinput">
-    <div class="tc mb2">
-      <span id="lbs-value" class="ma0 f2 b dark-gray">5'4</span>
-      <span class="ma0 moon-gray">ft</span>
-    </div>
+      <p class="lastRecord">Last recorded height on ((Date))</p>
+      <div class="tc mb2">
+        <span id="lbs-value" class="ma0 f2 b dark-gray">5'4</span>
+        <span class="ma0 moon-gray">ft</span>
+      </div>
 
     <p class="ma0 tc mb4 moon-gray f6"><span id="kg-value">162.56</span> cm </p>
 
@@ -53,7 +68,9 @@
     <div class="tc">
     </div>
   </accordion>
+
   <accordion title="Weight" class="weightinput">
+    <p class="lastRecord">Last recorded Weight on ((Date))</p>
     <div class="tc mb2">
       <span id="lbs-value" class="ma0 f2 b dark-gray">125</span>
       <span class="ma0 moon-gray">lbs</span>
@@ -66,6 +83,7 @@
     </div>
   </accordion>
   <accordion title="Heart Rate"> 
+      <p class="lastRecordgreen">"CONNECTED TO APPLE WATCH"</p>
       <div id="heartRate">
           <div class="label">Heart rate</div>
           <span class="heart-ico fa fa-heart animated infinite pulse"></span>
@@ -76,7 +94,7 @@
   <!-- Human Body  -->
   <div class="row text-center">
       <div class="col humanBody ">
-          <h1>Where does it hurt?</h1>
+          <h3>Where does it hurt?</h3>
           <div class="human-body">
             <svg data-position="head" class="head" xmlns="http://www.w3.org/2000/svg" width="56.594" height="95.031" viewBox="0 0 56.594 95.031"><path d="M15.92 68.5l8.8 12.546 3.97 13.984-9.254-7.38-4.622-15.848zm27.1 0l-8.8 12.546-3.976 13.988 9.254-7.38 4.622-15.848zm6.11-27.775l.108-11.775-21.16-14.742L8.123 26.133 8.09 40.19l-3.24.215 1.462 9.732 5.208 1.81 2.36 11.63 9.72 11.018 10.856-.324 9.56-10.37 1.918-11.952 5.207-1.81 1.342-9.517zm-43.085-1.84l-.257-13.82L28.226 11.9l23.618 15.755-.216 10.37 4.976-17.085L42.556 2.376 25.49 0 10.803 3.673.002 24.415z"/></svg>
             <svg data-position="shoulder" class="shoulder" xmlns="http://www.w3.org/2000/svg" width="109.532" height="46.594" viewBox="0 0 109.532 46.594"><path d="M38.244-.004l1.98 9.232-11.653 2.857-7.474-2.637zm33.032 0l-1.98 9.232 11.653 2.857 7.474-2.637zm21.238 10.54l4.044-2.187 12.656 14 .07 5.33S92.76 10.66 92.515 10.535zm-1.285.58c-.008.28 17.762 18.922 17.762 18.922l.537 16.557-6.157-10.55L91.5 30.988 83.148 15.6zm-74.224-.58L12.962 8.35l-12.656 14-.062 5.325s16.52-17.015 16.764-17.14zm1.285.58C18.3 11.396.528 30.038.528 30.038L-.01 46.595l6.157-10.55 11.87-5.056L26.374 15.6z"/></svg>
