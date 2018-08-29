@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import firebase from 'firebase/app';
 
 @Injectable()
@@ -13,6 +13,7 @@ export class DataService {
   constructor(public afAuth: AngularFireAuth, private db: AngularFireDatabase) {
     afAuth.authState.subscribe(usr => {
       this.user = usr;
+      console.log("welcome " + usr.email)
     });
     // console.log("data constructor");
     // this.DrugList = db.list<any>('results');
@@ -24,13 +25,13 @@ export class DataService {
     // return this.db.database.ref('results').orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366');
     console.log("I'm from the getDrug function");
     return this.db.object('/rx/results/' + String(id)).valueChanges();
-    // const results = this.db.list('results');
-    // console.log(results);
-   
+    const results = this.db.list('results');
+    console.log(results);
+
   }
-// Get User Info
+  // Get User Info
   getUserById(PatientID: string) {
-    return this.db.list<any>('patients', ref => ref.orderByChild('PatientID').equalTo(PatientID)).valueChanges();
+    return this.db.object('/patients/' + String(id)).valueChanges();
   }
   // Welcome logic
 
@@ -38,12 +39,8 @@ export class DataService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  logout() {
-    return this.afAuth.auth.signOut();
-  }
-
   get authenticated(): boolean {
-    if(firebase.auth().currentUser) {
+    if (firebase.auth().currentUser) {
       return true;
     }
     return false;

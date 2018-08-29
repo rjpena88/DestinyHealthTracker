@@ -19,10 +19,11 @@ export class WelcomePage {
   // Move to cards.ts
   constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
 
-    
     // this.auth.getDrugById(61).subscribe(console.log);
     // console.log("this is it");
+
     // this.auth.getUserById("TcKr9t0s7hZP4v4dBiTj8Wg31wN2").subscribe(console.log);
+
   }
 
   login() {
@@ -33,16 +34,13 @@ export class WelcomePage {
     });
   }
 
-  logout() {
-    return this.afAuth.auth.signOut();
-  }
-
-  // Ionic Google Auth Sign In - NOT IN USE
+  // Ionic Google Auth Sign Up
   signIn() {
     // Sign in Firebase using popup auth and Google as the identity provider.
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
     this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+
 
   }
 }

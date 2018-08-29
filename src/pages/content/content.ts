@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../providers/data/data.service';
 import * as $ from "jquery";
 import firebase from 'firebase/app';
+import { WelcomePage } from '../welcome/welcome';
 
 
 @IonicPage()
@@ -12,10 +13,13 @@ import firebase from 'firebase/app';
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth) { }
-  
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private _data: DataService) { }
+
+
   logout() {
-    return this.afAuth.auth.signOut();
+    this.afAuth.auth.signOut().then(() => {
+      window.location.reload();
+    });
   }
 
 }
@@ -84,11 +88,11 @@ $(".pain-scale__level").click(function () {
     );
 });
 // Heart Rate 
-var bpm = setInterval(function(){
+var bpm = setInterval(function () {
 
-  var heartRate = [82,82,83,83,84,84,85,86]
+  var heartRate = [82, 82, 83, 83, 84, 84, 85, 86]
   var rand = heartRate[Math.floor(Math.random() * heartRate.length)];
-    
-    $('.heartRateCounter').text(rand);
-  
-  }, 1000);
+
+  $('.heartRateCounter').text(rand);
+
+}, 1000);

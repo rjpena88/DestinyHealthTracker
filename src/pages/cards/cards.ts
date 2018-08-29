@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import { HttpClient,HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { IonicPage, NavController, MenuController } from 'ionic-angular';
+import { HttpClient, HttpClientModule } from '../../../node_modules/@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../providers/data/data.service';
-import { Item } from '../../models/item';
-import { Items } from '../../providers';
+import { WelcomePage } from '../welcome/welcome';
+// import { Item } from '../../models/item';
+// import { Items } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -14,10 +16,10 @@ import { Items } from '../../providers';
 export class CardsPage {
   cardItems: any[];
   currentItems: any = [];
-  result:any= [];
+  result: any = [];
   data: Observable<any>;
-  constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
-    this.auth.getDrugById(61).subscribe(data => {
+  constructor(public navCtrl: NavController, public http: HttpClient, public afAuth: AngularFireAuth, private auth: DataService) {
+    this.auth.getDrugById(6100).subscribe(data => {
       console.log(data);
       console.log("returned id");
     });
@@ -49,7 +51,7 @@ export class CardsPage {
 
   }
 
-  getData(){
+  getData() {
     // var url = 'https://destiny-health-tracker-app.firebaseio.com/rx';
     // this.data = this.http.get(url);
     // this.data.subscribe(data =>{
@@ -59,8 +61,11 @@ export class CardsPage {
     const rootRef = firebase.database().ref();
 
     const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
-    };
+  };
+  logout() {
+    this.afAuth.auth.signOut().then(() => {
+      this.navCtrl.push(WelcomePage)
+    });
 
-
+  }
 }
-
