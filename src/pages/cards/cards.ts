@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { DataService } from '../../providers/data/data.service';
 import { Item } from '../../models/item';
 import { Items } from '../../providers';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -56,7 +57,9 @@ export class CardsPage {
 
     const rootRef = firebase.database().ref();
 
-    const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
+    const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
+    console.log('getData testing');
+    console.log(this.getData());
     };
 
 
