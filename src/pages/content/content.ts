@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../providers/data/data.service';
+import { Observable } from 'rxjs/Observable';
 import * as $ from "jquery";
 import firebase from 'firebase/app';
 import { WelcomePage } from '../welcome/welcome';
@@ -13,7 +14,12 @@ import { WelcomePage } from '../welcome/welcome';
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private _data: DataService) { }
+  data: Observable<any>;
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService) { 
+    this.auth.getUserById("OG6IwzLfCMT8ak8gjIQ86mYJTbE3").subscribe(data => {
+      console.log(data);
+  })
+}
 
 
   logout() {

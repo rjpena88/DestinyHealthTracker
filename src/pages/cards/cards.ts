@@ -51,17 +51,17 @@ export class CardsPage {
 
   }
 
-  getData() {
+  // getData() {
     // var url = 'https://destiny-health-tracker-app.firebaseio.com/rx';
     // this.data = this.http.get(url);
     // this.data.subscribe(data =>{
     //   console.log(data);
     //   // this.result=data;
 
-    const rootRef = firebase.database().ref();
+    // const rootRef = firebase.database().ref();
 
-    const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
-  };
+    // const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
+  // };
   logout() {
     this.afAuth.auth.signOut().then(() => {
       this.navCtrl.push(WelcomePage)

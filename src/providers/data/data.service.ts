@@ -15,15 +15,13 @@ export class DataService {
       this.user = usr;
       console.log("welcome " + usr.email)
     });
-    // console.log("data constructor");
-    // this.DrugList = db.list<any>('results');
-    // console.log(this.DrugList);
+
   }
 
   // Test Prescription logic
   getDrugById(id: number) {
-    // return this.db.database.ref('results').orderByChild('id').equalTo('8ee4dc5e-df8e-4c0d-8522-a648565ea366');
-    console.log("I'm from the getDrug function");
+    
+    console.log("I'm from the getDrug function in data.service.ts");
     return this.db.object('/rx/results/' + String(id)).valueChanges();
     const results = this.db.list('results');
     console.log(results);
@@ -31,7 +29,10 @@ export class DataService {
   }
   // Get User Info
   getUserById(PatientID: string) {
-    return this.db.object('/patients/' + String(id)).valueChanges();
+    return this.db.object('/patients/' + String(PatientID)).valueChanges();
+    const results = this.db.list('results');
+    console.log(results);
+
   }
   // Welcome logic
 
