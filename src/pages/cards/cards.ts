@@ -4,9 +4,9 @@ import { HttpClient, HttpClientModule } from '../../../node_modules/@angular/com
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DataService } from '../../providers/data/data.service';
-import { WelcomePage } from '../welcome/welcome';
-// import { Item } from '../../models/item';
-// import { Items } from '../../providers';
+import { Item } from '../../models/item';
+import { Items } from '../../providers';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -60,12 +60,10 @@ export class CardsPage {
 
     // const rootRef = firebase.database().ref();
 
-    // const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
-  // };
-  logout() {
-    this.afAuth.auth.signOut().then(() => {
-      this.navCtrl.push(WelcomePage)
-    });
+    const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
+    console.log('getData testing');
+    console.log(this.getData());
+    };
 
   }
 }
