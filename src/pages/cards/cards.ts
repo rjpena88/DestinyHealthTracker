@@ -56,7 +56,7 @@ export class CardsPage {
     //   console.log(data);
     //   // this.result=data;
 
-    const rootRef = firebase.database().ref();
+    // const rootRef = firebase.database().ref();
 
     const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10);
     };
