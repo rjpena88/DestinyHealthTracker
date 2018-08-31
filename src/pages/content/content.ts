@@ -17,6 +17,7 @@ export class ContentPage {
   data: Observable<any>;
   constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService) { 
     this.auth.getUserById("OG6IwzLfCMT8ak8gjIQ86mYJTbE3").subscribe(data => {
+      console.log("this is from the content constructor")
       console.log(data);
   })
 }
