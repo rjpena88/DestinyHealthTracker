@@ -18,11 +18,11 @@ export class CardsPage {
   currentItems: any = [];
   result: any = [];
   data: Observable<any>;
-  constructor(public navCtrl: NavController, public http: HttpClient, public afAuth: AngularFireAuth, private auth: DataService) {
-    this.auth.getDrugById(6100).subscribe(data => {
-      console.log(data);
-      console.log("returned id");
-    });
+  constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
+    // this.auth.getDrugById(61).subscribe(data => {
+    //   console.log(data);
+    //   console.log("returned id");
+    // });
     this.cardItems = [
       {
         //Prescription Array ( Need rX API! )
@@ -51,19 +51,27 @@ export class CardsPage {
 
   }
 
-  // getData() {
+  getData(){
+
+    this.auth.getDrugById(61).subscribe(data => {
+      console.log(data);
+      console.log("returned id");
+    });
+
     // var url = 'https://destiny-health-tracker-app.firebaseio.com/rx';
     // this.data = this.http.get(url);
     // this.data.subscribe(data =>{
     //   console.log(data);
     //   // this.result=data;
+    // return.this.http.get('https://destiny-health-tracker-app.firebaseio.com/rx.json');
 
     // const rootRef = firebase.database().ref();
 
-    const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
-    console.log('getData testing');
-    console.log(this.getData());
-    };
+    // const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
+    // console.log('getData testing');
+    // console.log(this.getData());
+    // };
 
   }
 }
+};
