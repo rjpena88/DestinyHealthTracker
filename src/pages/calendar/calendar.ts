@@ -1,8 +1,13 @@
+import { IonicPage, NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
 let now = new Date();
 
-// @IonicPage()
+@IonicPage(
+  {
+    name: 'CalendarPage'
+  }
+)
 @Component({
   selector: 'page-calendar',
   templateUrl: 'calendar.html',

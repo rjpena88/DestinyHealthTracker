@@ -17,4 +17,5 @@ import { CalendarPage } from './calendar';
     CalendarPage
   ]
 })
+
 export class CalendarPageModule { }

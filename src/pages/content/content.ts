@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { HttpClient, HttpClientModule } from '../../../node_modules/@angular/common/http';
 import { DataService } from '../../providers/data/data.service';
 import { Observable } from 'rxjs/Observable';
 import * as $ from "jquery";
-import firebase from 'firebase/app';
-import { WelcomePage } from '../welcome/welcome';
-
 
 @IonicPage()
 @Component({
@@ -14,13 +12,25 @@ import { WelcomePage } from '../welcome/welcome';
   templateUrl: 'content.html'
 })
 export class ContentPage {
+  
+  userInfo;
   data: Observable<any>;
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService) { 
-    this.auth.getUserById("OG6IwzLfCMT8ak8gjIQ86mYJTbE3").subscribe(data => {
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService, public http: HttpClient) {
+
+    // this.auth.user
+    console.log("this is the user" + JSON.stringify(this.auth.user.uid));
+
+  
+    this.auth.getUserById
+    // setting the id
+    (this.auth.user.uid).subscribe(data => {
       console.log("this is from the content constructor")
       console.log(data);
-  })
-}
+      // assignin the DB data to userInfo variable
+      this.userInfo = data;
+      console.log("userInfo???" + this.userInfo.PatientFirstName);
+    })
+  }
 
 
   logout() {
@@ -57,37 +67,40 @@ $(document).ready(function () {
 });
 
 // How Are You Feeling
-$(document).ready(function() {
-  var readURL = function(input) {
+$(document).ready(function () {
+  var readURL = function (input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
 
-      reader.onload = function(e) {
-        $(".profile-pic").attr("src", e.target.result);
+      // reader.onload = function(e) {
+      //   $(".profile-pic").attr("src", e.target.result);
+      // };
+      reader.onload = function (e) {
+        $(".profile-pic").attr("src");
       };
 
       reader.readAsDataURL(input.files[0]);
     }
   };
 
-  $(".file-upload").on("change", function() {
+  $(".file-upload").on("change", function () {
     readURL(this);
   });
 
-  $(".upload-button").on("click", function() {
+  $(".upload-button").on("click", function () {
     $(".file-upload").click();
   });
 });
 
 // How Are You Feeling
 $(".pain-scale__level").hover(
-  function() {
+  function () {
     $(this)
       .addClass("pain-scale__level--active")
       .prevAll()
       .addClass("pain-scale__level--active");
   },
-  function() {
+  function () {
     $(this)
       .removeClass("pain-scale__level--active")
       .prevAll()
@@ -95,7 +108,7 @@ $(".pain-scale__level").hover(
   }
 );
 
-$(".pain-scale__level").click(function() {
+$(".pain-scale__level").click(function () {
   $(this)
     .siblings()
     .removeClass("pain-scale__level--selected");
@@ -103,7 +116,7 @@ $(".pain-scale__level").click(function() {
     .addClass("pain-scale__level--selected pain-scale__level--blink")
     .one(
       "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
-      function() {
+      function () {
         $(this).removeClass("pain-scale__level--blink");
       }
     );
@@ -112,7 +125,7 @@ $(".pain-scale__level").click(function() {
     .addClass("pain-scale__level--selected pain-scale__level--blink")
     .one(
       "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
-      function() {
+      function () {
         $(this).removeClass("pain-scale__level--blink");
       }
     );
@@ -124,5 +137,4 @@ var bpm = setInterval(function () {
   var rand = heartRate[Math.floor(Math.random() * heartRate.length)];
 
   $('.heartRateCounter').text(rand);
-
-}, 1000);
+})

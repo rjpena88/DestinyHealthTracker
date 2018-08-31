@@ -5,8 +5,8 @@ import firebase from 'firebase/app';
 
 @Injectable()
 export class DataService {
-
-  private user: firebase.User;
+  user;
+  public user: firebase.User;
   DrugList: AngularFireList<any>;
   PatientList: AngularFireList<any>;
 
@@ -23,15 +23,15 @@ export class DataService {
     
     console.log("I'm from the getDrug function in data.service.ts");
     return this.db.object('/rx/results/' + String(id)).valueChanges();
-    const results = this.db.list('results');
-    console.log(results);
+    // var results = this.db.list('results');
+    // console.log(results);
 
   }
   // Get User Info
   getUserById(PatientID: string) {
     return this.db.object('/patients/' + String(PatientID)).valueChanges();
-    const results = this.db.list('results');
-    console.log(results);
+    // const results = this.db.list('results');
+    // console.log(results);
 
   }
   // Welcome logic
