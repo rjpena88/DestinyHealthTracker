@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Tinos:700');
+
+
+
 /* profile pic  */
 .profile-pic {
-    max-width: 200px;
     max-height: 200px;
     display: block;
+    padding: 0px;
+    margin: 0px;
   }
   
   .file-upload {
@@ -12,24 +17,24 @@
   .circle {
     border-radius: 1000px !important;
     overflow: hidden;
-    width: 128px;
-    height: 128px;
-    border: 8px solid rgba(255, 255, 255, 0.7);
+    width: 130px;
+    height: 130px;
+    border: 8px solid #35a0ad;
     // position: absolute;
     // top: 72px;
-    background-color: orange;
+    background-color:  rgba(27, 92, 97, 0.377);
   }
   
   img {
     max-width: 100%;
-    height: auto;
+    // height: auto;
   }
   
   .p-image {
     position: absolute;
-    top: 115px;
+    top: 150px;
     left: 100px;
-    color: #ffffff;
+    color: white;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     &:hover {
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -43,187 +48,122 @@
       color: #999;
     }
   }
+
+  .bio {
+    padding-top: 70px;
+    padding-left: 10px;
+    float: left;
+    color: white;
+  }
   
   /* How Are You Feeling  */
-  @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
-  /* Begin reset */
-  body,
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 0;
-  }
-  
-  /* End reset */
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #f3f5f7;
-    font-family: "Roboto", sans-serif;
-    font-size: 15px;
-    line-height: 1.4675;
-    color: #555;
-  }
-  
-  h3 {
-    font-size: 22px;
-    font-weight: 500;
-    color: #2b3535;
-    margin-bottom: 32px;
-  }
-  
-  .barbar {
-    margin: 50px auto 0 auto;
-    padding: 120px 20px 130px 20px;
-    max-width: 779px;
-    background: #fff;
-    box-shadow: 0 1px 3px 0 rgba(148, 164, 179, 0.2);
-    border-radius: 5px;
-    text-align: center;
-  }
-  @media (min-width: 768px) {
-    .wrapper {
-      padding: 120px 30px 130px 30px;
-    }
-  }
-  
-  .pain-scale {
-    position: relative;
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  .pain-scale:before {
-    position: absolute;
-    content: "";
-    width: 1px;
-    height: 32px;
-    top: 45px;
-    left: 0;
-    background-color: #dbe1e6;
-  }
-  .pain-scale:after {
-    position: absolute;
-    content: "";
-    width: 1px;
-    height: 32px;
-    top: 45px;
-    right: 0;
-    background-color: #dbe1e6;
-  }
-  .pain-scale__level {
-    display: inline-block;
-    position: relative;
-    width: 10%;
-    height: 45px;
-    background: #e7ebee;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    z-index: 1;
-  }
-  .pain-scale__level--1, .pain-scale__level--selected.pain-scale__level--1 {
-    background-color: #fcc419;
-  }
-  .pain-scale__level--active.pain-scale__level--2, .pain-scale__level--selected.pain-scale__level--2 {
-    background-color: #f8ae1d;
-  }
-  .pain-scale__level--active.pain-scale__level--3, .pain-scale__level--selected.pain-scale__level--3 {
-    background-color: #f5a01f;
-  }
-  .pain-scale__level--active.pain-scale__level--4, .pain-scale__level--selected.pain-scale__level--4 {
-    background-color: #f39122;
-  }
-  .pain-scale__level--active.pain-scale__level--5, .pain-scale__level--selected.pain-scale__level--5 {
-    background-color: #f08224;
-  }
-  .pain-scale__level--active.pain-scale__level--6, .pain-scale__level--selected.pain-scale__level--6 {
-    background-color: #ed7427;
-  }
-  .pain-scale__level--active.pain-scale__level--7, .pain-scale__level--selected.pain-scale__level--7 {
-    background-color: #ea6529;
-  }
-  .pain-scale__level--active.pain-scale__level--8, .pain-scale__level--selected.pain-scale__level--8 {
-    background-color: #e7562b;
-  }
-  .pain-scale__level--active.pain-scale__level--9, .pain-scale__level--selected.pain-scale__level--9 {
-    background-color: #e5482e;
-  }
-  .pain-scale__level--active.pain-scale__level--10, .pain-scale__level--selected.pain-scale__level--10 {
-    background-color: #e03131;
-  }
-  .pain-scale__level--blink {
-    animation: fade 0.2s ease;
-  }
-  .pain-scale__level:not(:last-child) {
-    border-right: 1px solid #fff;
-  }
-  .pain-scale__level:first-child {
-    border-top-left-radius: 5px;
-  }
-  .pain-scale__level:last-child {
-    border-top-right-radius: 5px;
-  }
-  .pain-scale__number {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 45px;
-    left: 0;
-    height: 32px;
-    padding-top: 5px;
-  }
-  
-  .legend {
-    position: relative;
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  .legend__beginning {
-    position: absolute;
-    left: 0;
-    top: 30px;
-  }
-  @media (min-width: 768px) {
-    .legend__beginning {
-      transform: translatex(-50%);
-    }
-  }
-  .legend__end {
-    position: absolute;
-    right: 0;
-    top: 30px;
-  }
-  @media (min-width: 768px) {
-    .legend__end {
-      transform: translatex(50%);
-    }
-  }
-  
-  @keyframes fade {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.6;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  /*
+ * Copyright (c) 2012-2013 Thibaut Courouble
+ * http://www.cssflow.com
+ * Licensed under the MIT License
+ *
+ * Sass/SCSS source: https://goo.gl/UhXKg
+ * PSD by Vin Thomas: https://goo.gl/n1M2e
+ */
+
+.container {
+  text-align: center;
+  font-size: 30px;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+h3 {
+  font-family: 'Tinos', serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.face {
+  color: #f2d31b;
+}
+
+.progress {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  height: 20px !important;
+}
+
+.progress-bar {
+  height: 30px;
+  border-radius: 4px;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       https://css-tricks.com/webkit-sibling-bug/
+ */
+
+ #zero:checked ~ .progress > .progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: #0a110241;
+}
+
+#five:checked ~ .progress > .progress-bar {
+  width: 10%;
+  height: 20px;
+  background-color: #86e01e;
+}
+
+#twentyfive:checked ~ .progress > .progress-bar {
+  width: 25%;
+  background-color: #f2d31b;
+}
+
+#fifty:checked ~ .progress > .progress-bar {
+  width: 50%;
+  background-color: #f2b01e;
+}
+
+#seventyfive:checked ~ .progress > .progress-bar {
+  width: 75%;
+  background-color: #f27011;
+}
+
+#onehundred:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #f63a0f;
+}
+
+.radio {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 5px 20px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio:checked + .label {
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}
   /* Human Body */
   
   .human-body {
@@ -233,7 +173,7 @@
     height: 260px;
     display: block;
     margin: 40px auto;
-    float: left;
+    float: center;
     svg {
       &:hover {
         cursor: pointer;
@@ -243,7 +183,7 @@
       }
       position: absolute;
       left: 50%;
-      fill: #57c9d5;
+      fill: #35a0ad;
       &.head {
         margin-left: -28.5px;
         top: -6px;
@@ -290,8 +230,84 @@
     }
   }
 .headerRow {
-  background: #2BC0E4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background-image: url("https://thumbs.gfycat.com/TotalHairyAlligatorsnappingturtle.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background: #35a0ad;  /* fallback for old browsers */
+  // https://ak8.picdn.net/shutterstock/videos/12587588/thumb/1.jpg
+}
+// heart rate
+#heartRate {
+	color: RED;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 200;
+	.label {
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.heart-ico {
+		font-size: 3.3rem;
+		color: RED;
+		margin-right: 10px;
+		font-weight: 100;
+		position: relative;
+		top: -2px;
+	}
+	.heartRateCounter {
+		font-size: 4rem;
+	}
+}
+// weight
+:root {
+  --x: 16px;
+}
+
+.dial {
+  background-image: 
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='100' stroke='#EEEEEE' stroke-width='1'><path d='M 0,25 V 100' stroke='#CCCCCC' stroke-width='2' /><path d='M 15,50 V 100' /><path d='M 30,50 V 100' /> <path d='M 45,50 V 100' /><path d='M 60,50 V 100' /></svg>");
+  background-position: 50% 50%;
+  background-position-x: var(--x);
+  background-repeat: repeat-x;
+  cursor: move;  
+  height: 100px;
+  position: relative;
+}
+
+.dial:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100px;
+  transform: translate3d(-1px, 0, 0);
+  background-color: red;
+}
+
+.mw5-5 { width: 384px; }
+
+.weightinput {
+  text-align:center;
+}
+.heightinput {
+  text-align:center;
+}
+
+u {
+  color: red;
+}
+
+.dhr-green {
+  color: #35a0ad;
+
+}
+
+.lastRecord {
+  color: red !important; 
+  text-align: center;
+}
+.lastRecordgreen {
+  color: rgb(13, 216, 13) !important;
+  text-align: center;
+  text-decoration: underline;
 }

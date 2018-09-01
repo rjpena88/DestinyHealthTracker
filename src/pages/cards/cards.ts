@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController } from 'ionic-angular';
+import { HttpClient, HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { DataService } from '../../providers/data/data.service';
+import { Item } from '../../models/item';
+import { Items } from '../../providers';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -8,36 +15,15 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class CardsPage {
   cardItems: any[];
-
-  constructor(public navCtrl: NavController) {
+  currentItems: any = [];
+  result: any = [];
+  data: Observable<any>;
+  constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
+    // this.auth.getDrugById(61).subscribe(data => {
+    //   console.log(data);
+    //   console.log("returned id");
+    // });
     this.cardItems = [
-      {
-        user: {
-          avatar: 'assets/img/marty-avatar.png',
-          name: 'Marty McFly'
-        },
-        date: 'November 5, 1955',
-        image: 'assets/img/advance-card-bttf.png',
-        content: 'Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.',
-      },
-      {
-        user: {
-          avatar: 'assets/img/sarah-avatar.png.jpeg',
-          name: 'Sarah Connor'
-        },
-        date: 'May 12, 1984',
-        image: 'assets/img/advance-card-tmntr.jpg',
-        content: 'I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.'
-      },
-      {
-        user: {
-          avatar: 'assets/img/ian-avatar.png',
-          name: 'Dr. Ian Malcolm'
-        },
-        date: 'June 28, 1990',
-        image: 'assets/img/advance-card-jp.jpg',
-        content: 'Your scientists were so preoccupied with whether or not they could, that they didn\'t stop to think if they should.'
-      },
       {
         //Prescription Array ( Need rX API! )
         user: {
@@ -62,6 +48,29 @@ export class CardsPage {
         content: 'In painting, you have unlimited power. You have the ability to move mountains. You can bend rivers. But when I get home, the only thing I have power over is the garbage. Just relax and let it flow. That easy. Everybody needs a friend. Let your heart take you to wherever you want to be. How do you make a round circle with a square knife? That is your challenge for the day. We can always carry this a step further. There is really no end to this.',
       },
     ];
+
+  }
+
+  getData(){
+
+    this.auth.getDrugById(61).subscribe(data => {
+      console.log(data);
+      console.log("returned id");
+    });
+
+    // var url = 'https://destiny-health-tracker-app.firebaseio.com/rx';
+    // this.data = this.http.get(url);
+    // this.data.subscribe(data =>{
+    //   console.log(data);
+    //   // this.result=data;
+    // return.this.http.get('https://destiny-health-tracker-app.firebaseio.com/rx.json');
+
+    // const rootRef = firebase.database().ref();
+
+    // const oneRef = rootRef.child('rx').child('results').child('6081').child('active_ingredient').child('0').limitToFirst(10).valueChanges();
+    // console.log('getData testing');
+    // console.log(this.getData());
+    // };
 
   }
 }

@@ -1,8 +1,10 @@
-//@ts-check
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { HttpClient, HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { DataService } from '../../providers/data/data.service';
+import { Observable } from 'rxjs/Observable';
 import * as $ from "jquery";
-
 
 @IonicPage()
 @Component({
@@ -10,8 +12,32 @@ import * as $ from "jquery";
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  constructor(public navCtrl: NavController) { }
   
+  userInfo;
+  data: Observable<any>;
+  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService, public http: HttpClient) {
+
+    // this.auth.user
+    console.log("this is the user" + JSON.stringify(this.auth.user.uid));
+
+  
+    this.auth.getUserById
+    // setting the id
+    (this.auth.user.uid).subscribe(data => {
+      console.log("this is from the content constructor")
+      console.log(data);
+      // assignin the DB data to userInfo variable
+      this.userInfo = data;
+      console.log("userInfo???" + this.userInfo.PatientFirstName);
+    })
+  }
+
+
+  logout() {
+    this.afAuth.auth.signOut().then(() => {
+      window.location.reload();
+    });
+  }
 
 }
 
@@ -24,7 +50,33 @@ $(document).ready(function () {
       reader.onload = function (e: any) {
         let target: any = e.target; //<-- This (any) will tell compiler to shut up!
         let content: string = target.result;
-        $(".profile-pic").attr("src", this.result);
+        $(".profile-pic").attr("src", target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  };
+
+  $(".file-upload").on("change", function () {
+    readURL(this);
+  });
+
+  $(".upload-button").on("click", function () {
+    $(".file-upload").click();
+  });
+});
+
+// How Are You Feeling
+$(document).ready(function () {
+  var readURL = function (input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      // reader.onload = function(e) {
+      //   $(".profile-pic").attr("src", e.target.result);
+      // };
+      reader.onload = function (e) {
+        $(".profile-pic").attr("src");
       };
 
       reader.readAsDataURL(input.files[0]);
@@ -78,3 +130,11 @@ $(".pain-scale__level").click(function () {
       }
     );
 });
+// Heart Rate 
+var bpm = setInterval(function () {
+
+  var heartRate = [82, 82, 83, 83, 84, 84, 85, 86]
+  var rand = heartRate[Math.floor(Math.random() * heartRate.length)];
+
+  $('.heartRateCounter').text(rand);
+})
