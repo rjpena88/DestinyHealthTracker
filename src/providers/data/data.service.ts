@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 
 @Injectable()
 export class DataService {
+  // this variable we made
   // user;
   public user: firebase.User;
   DrugList: AngularFireList<any>;
@@ -12,6 +13,7 @@ export class DataService {
 
   constructor(public afAuth: AngularFireAuth, private db: AngularFireDatabase) {
     afAuth.authState.subscribe(usr => {
+      // storing the usr into user variable
       this.user = usr;
       console.log("welcome " + usr.email)
     });
