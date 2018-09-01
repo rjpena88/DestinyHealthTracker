@@ -18,7 +18,7 @@ export class ContentPage {
   constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService, public http: HttpClient) {
 
     // this.auth.user
-    console.log("this is the user" + JSON.stringify(this.auth.user.uid));
+    console.log("this is the user ID = " + this.auth.user.uid);
 
   
     this.auth.getUserById
@@ -26,9 +26,9 @@ export class ContentPage {
     (this.auth.user.uid).subscribe(data => {
       console.log("this is from the content constructor")
       console.log(data);
-      // assignin the DB data to userInfo variable
+      // assigning the DB data to userInfo variable
       this.userInfo = data;
-      console.log("userInfo???" + this.userInfo.PatientFirstName);
+      console.log("User first name is = " + this.userInfo.PatientFirstName);
     })
   }
 

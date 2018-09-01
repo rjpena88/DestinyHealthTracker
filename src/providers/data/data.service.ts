@@ -5,7 +5,7 @@ import firebase from 'firebase/app';
 
 @Injectable()
 export class DataService {
-  user;
+  // user;
   public user: firebase.User;
   DrugList: AngularFireList<any>;
   PatientList: AngularFireList<any>;
