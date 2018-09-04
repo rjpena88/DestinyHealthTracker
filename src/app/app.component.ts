@@ -9,8 +9,8 @@ import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
 
 @Component({
-  template: 
-  `
+  template:
+    `
   <ion-menu [content]="content">
 
     <ion-header>

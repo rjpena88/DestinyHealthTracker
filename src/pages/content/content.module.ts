@@ -19,8 +19,6 @@ import { AccordionComponent } from '../../components/accordion/accordion';
   ]
 })
 
-
-
 export class ContentPageModule { }
 
 

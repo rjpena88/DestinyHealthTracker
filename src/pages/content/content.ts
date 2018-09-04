@@ -12,24 +12,26 @@ import * as $ from "jquery";
   templateUrl: 'content.html'
 })
 export class ContentPage {
-  
+
   userInfo;
+  isLoaded: boolean = false;
   data: Observable<any>;
   constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, private auth: DataService, public http: HttpClient) {
 
     // this.auth.user
     console.log("this is the user ID = " + this.auth.user.uid);
 
-  
+
     this.auth.getUserById
-    // setting the id
-    (this.auth.user.uid).subscribe(data => {
-      console.log("this is from the content constructor")
-      console.log(data);
-      // assigning the DB data to userInfo variable
-      this.userInfo = data;
-      console.log("User first name is = " + this.userInfo.PatientFirstName);
-    })
+      // setting the id
+      (this.auth.user.uid).subscribe(data => {
+        console.log("this is from the content constructor")
+        console.log(data);
+        // assigning the DB data to userInfo variable
+        this.userInfo = data;
+        console.log("User first name is = " + this.userInfo.PatientFirstName);
+        this.isLoaded = true;
+      })
   }
 
 

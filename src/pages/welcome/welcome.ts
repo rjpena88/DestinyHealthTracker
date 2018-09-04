@@ -25,7 +25,7 @@ export class WelcomePage {
     // this.auth.getUserById("TcKr9t0s7hZP4v4dBiTj8Wg31wN2").subscribe(console.log);
 
   }
-
+// insert ionic toast as ifthen statement
   login() {
     this.auth.login(this.email, this.password).then((data) => {
       this.navCtrl.push(MainPage);
@@ -40,7 +40,5 @@ export class WelcomePage {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
     this.fireAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-
-
   }
 }

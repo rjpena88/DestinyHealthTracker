@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
 import { Tab1Root, Tab2Root, Tab3Root, Tab4Root, Tab5Root } from '../';
-// import { CalendarPage } from '../calendar/calendar'
 
 @IonicPage()
 @Component({
@@ -23,6 +21,8 @@ export class TabsPage {
   tab4Title = " ";
   tab5Title = " ";
 
+
+  // change translateservice values back to TAB*ROOT and modify translation JSON instead
   constructor(public navCtrl: NavController, public translateService: TranslateService) {
     translateService.get(['RX','Labs', 'Home', 'Mail', 'Calendar']).subscribe(values => {
       this.tab1Title = values['RX'];
