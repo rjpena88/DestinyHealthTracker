@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { MainPage } from '../';
 import { DataService } from '../../providers/data/data.service';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -17,7 +17,7 @@ export class WelcomePage {
   password: string;
 
   // Move to cards.ts
-  constructor(public navCtrl: NavController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
+  constructor(public navCtrl: NavController, private toastCtrl: ToastController, private auth: DataService, private fireAuth: AngularFireAuth, public afAuth: AngularFireAuth, ) {
 
     // this.auth.getDrugById(61).subscribe(console.log);
     // console.log("this is it");
@@ -26,13 +26,33 @@ export class WelcomePage {
 
   }
 // insert ionic toast as ifthen statement
+
   login() {
     this.auth.login(this.email, this.password).then((data) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(MainPage)
+      this.createToast('Login Successful!').present();
     }, (error: any) => {
-      this.navCtrl.push(WelcomePage);
+      this.createToast('Oops, email and/or password not valid...').present();
     });
   }
+
+  /**
+   * Toast Creator
+   * @param {string} message
+   */
+  createToast(message: string) {
+    return this.toastCtrl.create({
+      message,
+      duration: 3000 // 3 seconds
+    });
+  }
+
+  /**
+   * Cancel onclick event.
+   */
+  // cancelClicked() {
+  //   this.viewCtrl.dismiss(false);
+  // }
 
   // Ionic Google Auth Sign Up
   signIn() {
