@@ -16,14 +16,12 @@
           <i class="fa fa-camera upload-button"></i>
           <input class="file-upload" type="file" accept="image/*" />
         </div>
-          <!-- <input class="file-input" type="file" (change)="startUpload($event.target.files)" accept="image/*" /> -->
-        </div> 
       </div>
     </div>
     <div class="row">
-      <div class="col-5 col-md-6">
+      <div class="col-12">
         <div *ngIf="isLoaded" class="bio">
-          <p class="p-0 m-0 patientData">{{ userInfo.PatientFirstName }}{{ userInfo.PatientLastName }}</p>
+          <p class="patientData"> {{ userInfo.PatientFirstName }} {{ userInfo.PatientLastName }}</p>
         </div>
       </div>
     </div>
@@ -93,7 +91,7 @@
         <span class="ma0 moon-gray">lbs</span>
       </div>
       <p class="ma0 tc mb4 moon-gray f6">
-      <span id="kg-value"></span>kg</p>
+        <span id="kg-value"></span>kg</p>
       <div class="dial mb4"></div>
       <div class="tc">
       </div>
@@ -104,8 +102,8 @@
       <p class="lastRecordgreen">"CONNECTED TO APPLE WATCH"</p>
       <div id="heartRate">
         <div class="label">Heart rate</div>
-          <span class="heart-ico fa fa-heart animated infinite pulse"></span>
-          <span class="heartRateCounter"></span> BPM
+        <span class="heart-ico fa fa-heart animated infinite pulse"></span>
+        <span class="heartRateCounter"></span> BPM
       </div>
     </accordion>
   </div>
