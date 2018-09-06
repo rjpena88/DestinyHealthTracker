@@ -31,10 +31,10 @@
 <ion-content>
 
   <!-- API TESTING -->
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>  
+  <!-- <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>  
   
-  <button ion-button (click)= "getDrugById()">Get Data</button>
-    <!-- <ion-row>Body:{{result.body}}</ion-row>
+  <button ion-button (click)= "getData()">Get Data</button>
+    <ion-row>Body:{{result.body}}</ion-row>
     <ion-row>ID:{{result.id}}</ion-row>
     <ion-row>Title:{{result.title}}</ion-row> -->
 
@@ -45,7 +45,7 @@
         <img [src]="item.user.avatar">
       </ion-avatar>
       <h2>{{item.user.name}}</h2>
-      <p>{{item.date}}</p>
+      <p>{{item.dosage}}</p>
       <p>{{item.user.otherNames}}</p>
     </ion-item>
 
