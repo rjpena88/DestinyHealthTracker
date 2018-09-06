@@ -1,38 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title text-center>My Calendar</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addEvent()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-  <div class="row headerRow p-3">
-    <div class="col-sm-0">
-      <div class="circle">
-        <i class="fas fa-cog"></i>
-          <img class="profile-pic" src="">
-        <!-- Default Image -->
-        <img src="">
-          <div class="p-image">
-            <i class="fa fa-camera upload-button"></i>
-            <input class="file-upload" type="file" accept="image/*" />
-          </div> 
+    <ion-navbar>
+      <ion-title text-center>
+        My Calendar
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="addEvent()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+    <div class="row headerRow pl-4">
+      <div class="col-sm-0">
+      </div>
+      <div class="row">
+        <div class="col-5 col-md-6">
+            <div class="bio">
+              <p class="p-0 m-0"></p>    
+              <p class="p-0 m-0"></p>
+            </div>  
+          </div>
         </div>
-    </div>
-    <div class="row">
-      <div class="col-5 col-md-6">
-          <div class="bio">
-            <p class="p-0 m-0">Name:</p>    
-            <p class="p-0 m-0">Age:</p>
-          </div>  
-        </div>
-        </div>
-        </div>
-        <hr>
-</ion-header>
+      </div>
+  </ion-header>
 
 <ion-content>
-  <mbsc-eventcalendar [data]="events" [options]="eventSettings"></mbsc-eventcalendar>
-  <h1>Calendar works!</h1>
+  <div class="container">
+      <ion-calendar #calendar (onclick)="onDaySelect($event)">
+          <button id="demo" onclick="createNewEvent()">Click me</button>
+      </ion-calendar>
+  </div>
+
+  <h4 class="text-center">No current events</h4>
+
+    
 </ion-content>

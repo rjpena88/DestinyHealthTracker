@@ -13,6 +13,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 // import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 // import { CalendarPage } from '../pages/calendar/calendar';
 
+//calendar Daira 
+import { CalendarModule } from 'ionic3-calendar-en';
+
 // Angular Fire Imports
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -65,6 +68,7 @@ export function provideSettings(storage: Storage) {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     // NgCalendarModule,
+    CalendarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

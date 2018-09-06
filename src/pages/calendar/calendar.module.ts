@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CalendarPage } from './calendar';
+import { CalendarModule } from 'ionic3-calendar-en'; //daira
+
 
 @NgModule({
   declarations: [
@@ -10,6 +12,7 @@ import { CalendarPage } from './calendar';
   ],
   imports: [ 
     FormsModule,
+    CalendarModule,
     IonicPageModule.forChild(CalendarPage),
     TranslateModule.forChild()
   ],
@@ -19,3 +22,6 @@ import { CalendarPage } from './calendar';
 })
 
 export class CalendarPageModule { }
+
+
+ 
