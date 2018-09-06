@@ -18,10 +18,11 @@ export class CardsPage {
   result:any= [];
   data: Observable<any>;
   constructor(public navCtrl: NavController, public http: HttpClient, private auth: DataService) {
-    // this.auth.getDrugById(61).subscribe(data => {
-    //   console.log(data);
-    //   console.log("returned id");
-    // });
+    
+    this.auth.getDrugById(61).subscribe(data => {
+      console.log(data);
+      console.log("returned id");
+    });
     this.cardItems = [
       {
         //Prescription Array ( Need rX API! )
@@ -29,33 +30,33 @@ export class CardsPage {
           avatar: 'assets/img/rX-avatar.png',
           name: 'Ibuprofen'
         },
-        date: '{{ input.date }}',
+        dosage: '1 800mg pill twice a day.',
         image: 'assets/img/advance-card-ibu.jpeg',
-        content: 'At home you have unlimited time. No worries. No cares. Just float and wait for the wind to blow you around. Just think about these things in your mind - then bring them into your world. We have all at one time or another mixed some mud.',
+        content: 'Advil and ibuprofen are generally well tolerated medicines with a low incidence of adverse side effects. Ibuprofen has an extensive safety record, but as with any other OTC medication, you should exercise caution before taking this medication with any other prescription medications. Particular consideration must be taken before using Advil, or ibuprofen, for pain if you are already taking an anticoagulant (blood thinner) to avoid excessive bleeding. The current medical advice on taking NSAIDs during pregnancy is not to take them during the third trimester, as they may cause risk to the fetus. Anyone who is allergic to aspirin may also have an allergic reaction to other NSAIDs, including ibuprofen.',
       },
       {
         //Picture or no picture?
         user: {
           avatar: 'assets/img/rX-avatar.png',
-          name: 'Hydrocodone',
-          otherNames: 'Vicodin, Vicodin ES, Vicodin HP, Lortab, Lorcet, Lorcet Plus, Norco, Zydone, Hycet, Maxidone, Stagesic, Verdrocet, Xodol, Zamicet, Zolvit and Anexsia (discontinued brand)'
+          name: 'Azithromycin',
+          otherNames: 'Common brands: Zithromax, AzaSite, Zmax'
         },
-        date: '{{ input.date }}',
+        dosage: 'As directed by Doctor.',
 
         // image: 'assets/img/advance-card-ibu.jpeg',
 
-        content: 'In painting, you have unlimited power. You have the ability to move mountains. You can bend rivers. But when I get home, the only thing I have power over is the garbage. Just relax and let it flow. That easy. Everybody needs a friend. Let your heart take you to wherever you want to be. How do you make a round circle with a square knife? That is your challenge for the day. We can always carry this a step further. There is really no end to this.',
+        content: 'Antibiotic, it can treat various types of infections, including pink eye bacterial conjunctivitis.'
       },
     ];
 
   }
 
-  getData(){
+  // getData(){
 
-    this.auth.getDrugById(61).subscribe(data => {
-      console.log(data);
-      console.log("returned id");
-    });
+  //   this.auth.getDrugById(61).subscribe(data => {
+  //     console.log(data);
+  //     console.log("returned id");
+  //   });
 
     // var url = 'https://destiny-health-tracker-app.firebaseio.com/rx';
     // this.data = this.http.get(url);
@@ -72,5 +73,4 @@ export class CardsPage {
     // };
 
 
-}
 };
