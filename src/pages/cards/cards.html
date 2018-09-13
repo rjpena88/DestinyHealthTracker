@@ -1,29 +1,20 @@
 <ion-header>
   <ion-navbar>
-    <ion-title text-center>Prescriptions<ion-icon name="power" (click)='logout()' class="float-right dhr-green"></ion-icon></ion-title>
+    <ion-title text-center>Prescriptions
+      <ion-icon name="power" (onClick)='logout()' class="float-right dhr-green"></ion-icon></ion-title>
   </ion-navbar>
-  <div class="row headerRow p-3">
+  <div class="row headerRow pl-4">
     <div class="col-sm-0">
-      <div class="circle">
-        <i class="fas fa-cog"></i>
-        <img class="profile-pic" src="">
-        <!-- Default Image -->
-        <img src="">
-        <div class="p-image">
-          <i class="fa fa-camera upload-button"></i>
-          <input class="file-upload" type="file" accept="image/*" />
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="col-5 col-md-6">
-        <div class="bio">
-          <p class="p-0 m-0">Name:</p>
-          <p class="p-0 m-0">Age:</p>
+          <div class="bio">
+            <p class="p-0 m-0"></p>    
+            <p class="p-0 m-0"></p>
+          </div>  
         </div>
       </div>
     </div>
-  </div>
 </ion-header>
 
 
@@ -56,21 +47,21 @@
     </ion-card-content>
 
     <ion-row>
-      <ion-col>
+      <ion-col pl-3>
         <button ion-button color="primary" clear small icon-start>
-          <ion-icon name='thumbs-up'></ion-icon>
-          12 Likes
+            <i class="fas fa-pills"></i>
+          QTY: 28
         </button>
       </ion-col>
       <ion-col>
         <button ion-button color="primary" clear small icon-start>
-          <ion-icon name='text'></ion-icon>
-          4 Comments
+            <i class="fas fa-prescription-bottle"></i>
+          Refills left: 0
         </button>
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          11h ago
+          Use Before: 01/21/2019
         </ion-note>
       </ion-col>
     </ion-row>
