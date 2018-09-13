@@ -121,7 +121,7 @@ var WelcomePage = /** @class */ (function () {
     };
     WelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-welcome',template:/*ion-inline-start:"/Users/remy/code/DestinyHealthTracker/src/pages/welcome/welcome.html"*/'<ion-content scroll="false">\n\n  <body>\n    <div class="splash-bg">\n      <div class="wrapper fadeInDown">\n        <div id="formContent">\n          <!-- Tabs Titles -->\n          <h1 class="title mt-4"> Destiny Health Tracker </h1>\n          <!-- Icon -->\n          <div class="fadeIn first">\n            <img src="../assets/imgs/destiny_health_tracker_loginlogo.png" id="icon" alt="User Icon" />\n          </div>\n\n          <!-- Login Form -->\n          <form>\n            <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name" [(ngModel)]="email">\n            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" [(ngModel)]="password">\n            <button ion-button color="danger" ion-button round (click)="login()" class="login">{{ \'LOGIN\' | translate }}</button>\n          </form>\n          <!-- Google Auth Sign In -->\n          <form>\n\n            <button ion-button color="danger" ion-button round (click)="signIn()" class="login">Sign Up With Google</button>\n          </form>\n\n          <!-- Remind Passowrd -->\n          <div id="formFooter">\n            <a class="hover">Forgot Password?</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </body>\n</ion-content>\n'/*ion-inline-end:"/Users/remy/code/DestinyHealthTracker/src/pages/welcome/welcome.html"*/
+            selector: 'page-welcome',template:/*ion-inline-start:"/Users/remy/code/DestinyHealthTracker/src/pages/welcome/welcome.html"*/'<ion-content scroll="false">\n\n  <body>\n    <div class="splash-bg">\n      <div class="wrapper fadeInDown">\n        <div id="formContent">\n          <!-- Tabs Titles -->\n          <h1 class="title mt-4"> Destiny Health Tracker </h1>\n          <!-- Icon -->\n          <div class="fadeIn first">\n            <img src="https://raw.githubusercontent.com/rjpena88/DestinyHealthTracker/master/docs/assets/imgs/destiny_health_tracker_logo_v1_LOGO_SMALL.png" id="icon" alt="User Icon" />\n          </div>\n\n          <!-- Login Form -->\n          <form>\n            <input type="text" id="login" class="fadeIn second" name="login" placeholder="User Name" [(ngModel)]="email">\n            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" [(ngModel)]="password">\n            <button ion-button color="danger" ion-button round (click)="login()" class="login">{{ \'LOGIN\' | translate }}</button>\n          </form>\n          <!-- Google Auth Sign In -->\n          <form>\n\n            <button ion-button color="danger" ion-button round (click)="signIn()" class="login">Sign Up With Google</button>\n          </form>\n\n          <!-- Remind Passowrd -->\n          <div id="formFooter">\n            <a class="hover">Forgot Password?</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </body>\n</ion-content>\n'/*ion-inline-end:"/Users/remy/code/DestinyHealthTracker/src/pages/welcome/welcome.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_data_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], WelcomePage);
@@ -140,10 +140,10 @@ var WelcomePage = /** @class */ (function () {
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-__webpack_require__(512);
-var firebase = _interopDefault(__webpack_require__(92));
 __webpack_require__(513);
+var firebase = _interopDefault(__webpack_require__(92));
 __webpack_require__(514);
+__webpack_require__(515);
 __webpack_require__(892);
 __webpack_require__(894);
 __webpack_require__(895);
@@ -278,7 +278,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var firebase = _interopDefault(__webpack_require__(92));
-var logger = __webpack_require__(515);
+var logger = __webpack_require__(516);
 var tslib_1 = __webpack_require__(30);
 var webchannelWrapper = __webpack_require__(893);
 
