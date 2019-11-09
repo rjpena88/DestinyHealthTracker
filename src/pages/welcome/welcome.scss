@@ -22,7 +22,6 @@ body {
 
 /* BASIC */
 
-
 a {
   color: #92badd;
   display:inline-block;
@@ -31,7 +30,8 @@ a {
 }
 
 h1 {
-  color: black;
+  color: white;
+  text-shadow: 2px 2px black;
   text-align: center;
   font-size: 35px;
   font-weight: 600;
