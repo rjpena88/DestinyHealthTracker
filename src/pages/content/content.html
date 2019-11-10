@@ -73,7 +73,7 @@
       </ion-list-header>
 
       <!-- Height -->
-      <ion-item>Height
+      <ion-item><div class="fontsize25">Height</div>
           <div *ngIf="isLoaded">
           <p class="lastRecord">Last recorded on ((Date))</p>
           <h1 class="healthData">{{ userInfo.PatientHeight }}</h1>
@@ -81,7 +81,7 @@
       </ion-item>
       
       <!-- Weight -->
-      <ion-item>Weight
+      <ion-item><div class="fontsize25">Weight</div>
       <div *ngIf="isLoaded">
           <p class="lastRecord">Last recorded on ((Date))</p>
           <h1 class="healthData">{{ userInfo.PatientWeight }}</h1>
@@ -89,7 +89,7 @@
         </ion-item>
 
     <!-- Glucose Levels -->
-      <ion-item>Gluccose Levels
+      <ion-item><div class="fontsize25">Glucose Levels</div>
       <div *ngIf="isLoaded">
           <p class="lastRecord">Last recorded on ((Date+time))</p>
           <h1 class="healthData">{{ userInfo.PatientGlucoseLevel }}</h1>
@@ -97,7 +97,7 @@
         </ion-item>
 
         <!-- Heart Rate -->
-      <ion-item>Heart Rate
+      <ion-item><div class="fontsize25">Heart Rate</div>
           <div *ngIf="isLoaded">
               <p class="lastRecordgreen">"CONNECTED TO SMART WATCH"</p>
               <div id="heartRate">
@@ -109,7 +109,7 @@
       </ion-item>
 
       <!-- Walking steps -->
-      <ion-item>Today's Steps
+      <ion-item><div class="fontsize25">Today's Steps</div>
           <div *ngIf="isLoaded">
               <p class="lastRecordgreen">"CONNECTED TO SMART WATCH"</p>
               <h1 class="healthData"><ion-icon name="walk"></ion-icon> 1,963 steps</h1>

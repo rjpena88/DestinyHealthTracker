@@ -9,6 +9,8 @@
     animation: animatedBackground 0s linear infinite;
   }
 
+
+  
   @keyframes animatedBackground {
     from { background-position: 0 0; }
     to { background-position: 100% 0; }
@@ -29,7 +31,7 @@ a {
   font-weight: 400;
 }
 
-h2 {
+.titleformat {
   color: white;
   text-shadow: 2px 2px black;
   text-align: center;
