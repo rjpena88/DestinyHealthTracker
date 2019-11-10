@@ -65,49 +65,61 @@
       <div class="progress-bar"></div>
     </div>
   </div>
-  <!-- Health Data -->
 
-  <div *ngIf="isLoaded" class="accordions">
+    <!-- Health Data -->
+  <ion-list>
+      <ion-list-header>
+        <h2>Vitals</h2>
+      </ion-list-header>
 
-    <!-- Height -->
-    <accordion title="Height" class="heightinput">
-      <p class="lastRecord">Last recorded height on ((Date))</p>
-      <div class="tc mb2">
-        <span id="lbs-value" class="ma0 f2 b dark-gray">{{ userInfo.PatientHeight }}</span>
-        <span class="ma0 moon-gray">ft</span>
-      </div>
-      <p class="ma0 tc mb4 moon-gray f6">
-        <span id="kg-value"></span> cm </p>
-      <div class="dial mb4"></div>
-      <div class="tc">
-      </div>
-    </accordion>
+      <!-- Height -->
+      <ion-item>Height
+          <div *ngIf="isLoaded">
+          <p class="lastRecord">Last recorded on ((Date))</p>
+          <h1 class="healthData">{{ userInfo.PatientHeight }}</h1>
+          </div>
+      </ion-item>
+      
+      <!-- Weight -->
+      <ion-item>Weight
+      <div *ngIf="isLoaded">
+          <p class="lastRecord">Last recorded on ((Date))</p>
+          <h1 class="healthData">{{ userInfo.PatientWeight }}</h1>
+          </div>
+        </ion-item>
 
-    <!-- weight -->
-    <accordion title="Weight" class="weightinput">
-      <p class="lastRecord">Last recorded Weight on ((Date))</p>
-      <div class="tc mb2">
-        <span id="lbs-value" class="ma0 f2 b dark-gray">{{ userInfo.PatientWeight }}</span>
-        <span class="ma0 moon-gray">lbs</span>
-      </div>
-      <p class="ma0 tc mb4 moon-gray f6">
-        <span id="kg-value"></span>kg</p>
-      <div class="dial mb4"></div>
-      <div class="tc">
-      </div>
-    </accordion>
+    <!-- Glucose Levels -->
+      <ion-item>Gluccose Levels
+      <div *ngIf="isLoaded">
+          <p class="lastRecord">Last recorded on ((Date+time))</p>
+          <h1 class="healthData">{{ userInfo.PatientGlucoseLevel }}</h1>
+          </div>
+        </ion-item>
 
-    <!-- heart -->
-    <accordion title="Heart Rate">
-      <p class="lastRecordgreen">"CONNECTED TO APPLE WATCH"</p>
-      <div id="heartRate">
-        <div class="label">Heart rate</div>
-        <span class="heart-ico fa fa-heart animated infinite pulse"></span>
+        <!-- Heart Rate -->
+      <ion-item>Heart Rate
+          <div *ngIf="isLoaded">
+              <p class="lastRecordgreen">"CONNECTED TO SMART WATCH"</p>
+              <div id="heartRate">
+                  <div class="label">Heart rate</div>
+                  <span class="heart-ico fa fa-heart animated infinite pulse"></span>
+                  <span class="heartRateCounter"></span> BPM
+                </div>
         <span class="heartRateCounter"></span> BPM
-      </div>
-    </accordion>
-  </div>
+              </div>
+      </ion-item>
 
+      <!-- Walking steps -->
+      <ion-item>Today's Steps
+          <div *ngIf="isLoaded">
+              <p class="lastRecordgreen">"CONNECTED TO SMART WATCH"</p>
+              <h1 class="healthData"><ion-icon name="walk"></ion-icon> 1,963 steps</h1>
+              </div>
+      </ion-item>
+    </ion-list>
+
+
+ 
   <!-- Human Body  -->
   <div class="row text-center">
     <div class="col humanBody ">
@@ -147,4 +159,5 @@
       </div> -->
     </div>
   </div>
+  
 </ion-content>

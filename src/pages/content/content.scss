@@ -292,6 +292,12 @@ h3 {
 .heightinput {
   text-align:center;
 }
+.glucoseinput {
+  text-align:center;
+}
+.stepsinput {
+  text-align:center;
+}
 
 u {
   color: red;
@@ -302,9 +308,16 @@ u {
 
 }
 
+//healthdata
+.healthData
+{
+  color: #35a0ad;
+  font-size: 4rem;
+}
+
 .lastRecord {
   color: red !important; 
-  text-align: center;
+  text-align: left;
 }
 .lastRecordgreen {
   color: rgb(13, 216, 13) !important;

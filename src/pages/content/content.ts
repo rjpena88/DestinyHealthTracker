@@ -140,3 +140,4 @@ var bpm = setInterval(function () {
 
   $('.heartRateCounter').text(rand);
 })
+
