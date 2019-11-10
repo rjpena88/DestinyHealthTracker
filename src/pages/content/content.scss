@@ -238,7 +238,7 @@ h3 {
 }
 // heart rate
 #heartRate {
-	color: RED;
+	color: #35a0ad;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: 200;
 	.label {
@@ -248,13 +248,14 @@ h3 {
 	.heart-ico {
 		font-size: 3.3rem;
 		color: RED;
-		margin-right: 10px;
+		margin-right: 1px;
 		font-weight: 100;
-		position: relative;
+		position: left !important;
 		top: -2px;
 	}
 	.heartRateCounter {
-		font-size: 4rem;
+    font-size: 4rem;
+    position: left !important; 
 	}
 }
 // weight
@@ -321,7 +322,7 @@ u {
 }
 .lastRecordgreen {
   color: rgb(13, 216, 13) !important;
-  text-align: center;
+  text-align: left;
   text-decoration: underline;
 }
 
@@ -334,4 +335,8 @@ u {
   position: absolute;
   top: 30px;
   left: 55px;
+}
+h1 {
+  color: #35a0ad;
+  text-shadow: none !important;
 }

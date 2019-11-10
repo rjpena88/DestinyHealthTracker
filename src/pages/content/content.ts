@@ -135,9 +135,9 @@ $(".pain-scale__level").click(function () {
 // Heart Rate 
 var bpm = setInterval(function () {
 
-  var heartRate = [75]
+  var heartRate = [82,82,83,83,84,84,85,86]
   var rand = heartRate[Math.floor(Math.random() * heartRate.length)];
 
   $('.heartRateCounter').text(rand);
-})
+}, 1000)
 
