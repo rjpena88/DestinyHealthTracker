@@ -1,36 +1,62 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title text-center>
-        My Calendar
-      </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only (click)="createNewEvent()">
-          <ion-icon name="add"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-navbar>
-    <div class="row headerRow pl-4">
-      <div class="col-sm-0">
-      </div>
-      <div class="row">
-        <div class="col-5 col-md-6">
-            <div class="bio">
-              <p class="p-0 m-0"></p>    
-              <p class="p-0 m-0"></p>
-            </div>  
-          </div>
+  <ion-navbar>
+    <ion-title text-center>
+      My Calendar
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="createNewEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="row headerRow pl-4">
+    <div class="col-sm-0">
+    </div>
+    <div class="row">
+      <div class="col-5 col-md-6">
+        <div class="bio">
+          <p class="p-0 m-0"></p>
+          <p class="p-0 m-0"></p>
         </div>
       </div>
-  </ion-header>
+    </div>
+  </div>
+</ion-header>
 
 <ion-content>
   <div class="container">
-      <ion-calendar #calendar (onclick)="onDaySelect($event)">
-          <button id="demo" onclick="createNewEvent()">Click me</button>
-      </ion-calendar>
+    <ion-calendar #calendar (onclick)="onDaySelect($event)">
+      <button id="demo" onclick="createNewEvent()">Click me</button>
+    </ion-calendar>
   </div>
 
-  <h4 class="text-center">No current events</h4>
+  <ion-list>
+    <ion-list-header>
+      <h1 class="text-center pt-4">Prescriptions</h1>
+    </ion-list-header>
+    <div class='fs25 text-center'>Don't forget! You have a prescription for Azythromicin</div>
 
-    
+    <br>
+    <ion-list-header>
+        <h1 class="text-center pt-4">Appointments</h1>
+      </ion-list-header>
+    <ul>
+      <div class="fs25">
+        <ion-checkbox></ion-checkbox> Prescription refill due on - 11/12/19
+      </div>
+      <div class="fs25">
+        <ion-checkbox>
+        </ion-checkbox> Cardiologist appointment on - 11/18/19
+      </div>
+      <div class="fs25">
+        <ion-checkbox>
+        </ion-checkbox> Pulmonologist appointment on - 11/21/19
+      </div>
+      <div class="fs25">
+        <ion-checkbox>
+        </ion-checkbox> Annual Wellness checkup on - 12/15/19
+      </div>
+    </ul>
+  </ion-list>
+
 </ion-content>
