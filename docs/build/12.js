@@ -86,7 +86,7 @@ var CardsPage = /** @class */ (function () {
                 },
                 dosage: '1 800mg pill twice a day.',
                 image: 'assets/img/advance-card-ibu.jpeg',
-                content: 'Advil and ibuprofen are generally well tolerated medicines with a low incidence of adverse side effects. Ibuprofen has an extensive safety record, but as with any other OTC medication, you should exercise caution before taking this medication with any other prescription medications. Particular consideration must be taken before using Advil, or ibuprofen, for pain if you are already taking an anticoagulant (blood thinner) to avoid excessive bleeding. The current medical advice on taking NSAIDs during pregnancy is not to take them during the third trimester, as they may cause risk to the fetus. Anyone who is allergic to aspirin may also have an allergic reaction to other NSAIDs, including ibuprofen.',
+                content: 'Advil and ibuprofen are generally well tolerated medicines with a low incidence of adverse side effects. Ibuprofen has an extensive safety record, but as with any other OTC medication, you should exercise caution before taking this medication with any other prescription medications.',
             },
             {
                 //Picture or no picture?
