@@ -41,6 +41,15 @@ var config = {
   messagingSenderId: "670569498272"
 };
 
+var config2 = {
+  apiKey: "QIAFCNZQhwaci0IAqtPFXsAp1bwDCY4d",
+  authDomain: "destiny-health-tracker-app.firebaseapp.com",
+  databaseURL: "https://destiny-health-tracker-app.firebaseio.com",
+  projectId: "destiny-health-tracker-app",
+  storageBucket: "destiny-health-tracker-app.appspot.com",
+  messagingSenderId: "670569498272"
+};
+
 export function provideSettings(storage: Storage) {
   /**
    * The Settings provider takes a set of default settings for your app.
